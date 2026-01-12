@@ -1,0 +1,897 @@
+
+
+============================== 03:55:31.247396 | f3fb9fb5-b62c-4f5f-baa9-ff1c04e374e7 ==============================
+[0m03:55:31.247396 [info ] [Dummy-1   ]: Running with dbt=1.9.4
+[0m03:55:31.248600 [debug] [Dummy-1   ]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'fail_fast': 'False', 'debug': 'False', 'log_path': '/tmp/dbt/logs', 'profiles_dir': '/tmp/dbt/', 'version_check': 'True', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'empty': 'False', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'invocation_command': 'dbt ', 'introspect': 'True', 'static_parser': 'True', 'target_path': '/tmp/dbt/target/', 'log_format': 'default', 'send_anonymous_usage_stats': 'False'}
+[0m03:55:31.612677 [info ] [Dummy-1   ]: Registered adapter: snowflake=1.9.2
+[0m03:55:32.376699 [debug] [Dummy-1   ]: checksum: 53ed91fada2233efb98368d1716b44ab532c83a9c293cf1890b7905d5b45fb25, vars: {}, profile: , target: dev, version: 1.9.4
+[0m03:55:32.379098 [info ] [Dummy-1   ]: Unable to do partial parsing because saved manifest not found. Starting full parse.
+[0m03:55:34.795506 [debug] [Dummy-1   ]: Wrote artifact WritableManifest to /tmp/dbt/target/manifest.json
+[0m03:55:34.798279 [debug] [Dummy-1   ]: Wrote artifact SemanticManifest to /tmp/dbt/target/semantic_manifest.json
+[0m03:55:34.843058 [info ] [Dummy-1   ]: Found 11 models, 50 data tests, 8 sources, 476 macros
+[0m03:55:34.849376 [info ] [Dummy-1   ]: 
+[0m03:55:34.850031 [info ] [Dummy-1   ]: Concurrency: 1 threads (target='dev')
+[0m03:55:34.850531 [info ] [Dummy-1   ]: 
+[0m03:55:34.851328 [debug] [Dummy-1   ]: Acquiring new snowflake connection 'master'
+[0m03:55:34.859037 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_tasty_bytes_dbt_db_dev'
+[0m03:55:34.993789 [debug] [ThreadPool]: Using snowflake connection "list_tasty_bytes_dbt_db_dev"
+[0m03:55:34.994462 [debug] [ThreadPool]: On list_tasty_bytes_dbt_db_dev: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "tasty_bytes", "target_name": "dev", "connection_name": "list_tasty_bytes_dbt_db_dev"} */
+alter session set quoted_identifiers_ignore_case = false;
+[0m03:55:34.994972 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m03:55:35.333327 [debug] [ThreadPool]: SQL status: SUCCESS 1 in 0.338 seconds
+[0m03:55:35.339181 [debug] [ThreadPool]: Using snowflake connection "list_tasty_bytes_dbt_db_dev"
+[0m03:55:35.339915 [debug] [ThreadPool]: On list_tasty_bytes_dbt_db_dev: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "tasty_bytes", "target_name": "dev", "connection_name": "list_tasty_bytes_dbt_db_dev"} */
+show objects in tasty_bytes_dbt_db.dev
+    limit 10000
+    
+;
+[0m03:55:35.379414 [debug] [ThreadPool]: SQL status: SUCCESS 0 in 0.039 seconds
+[0m03:55:35.381850 [debug] [ThreadPool]: Using snowflake connection "list_tasty_bytes_dbt_db_dev"
+[0m03:55:35.382466 [debug] [ThreadPool]: On list_tasty_bytes_dbt_db_dev: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "tasty_bytes", "target_name": "dev", "connection_name": "list_tasty_bytes_dbt_db_dev"} */
+alter session unset quoted_identifiers_ignore_case;
+[0m03:55:35.425728 [debug] [ThreadPool]: SQL status: SUCCESS 1 in 0.042 seconds
+[0m03:55:35.434406 [debug] [Thread-2 (]: Began running node model.tasty_bytes.raw_customer_customer_loyalty
+[0m03:55:35.435209 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly list_tasty_bytes_dbt_db_dev, now model.tasty_bytes.raw_customer_customer_loyalty)
+[0m03:55:35.435812 [debug] [Thread-2 (]: Began compiling node model.tasty_bytes.raw_customer_customer_loyalty
+[0m03:55:35.446889 [debug] [Thread-2 (]: Writing injected SQL for node "model.tasty_bytes.raw_customer_customer_loyalty"
+[0m03:55:35.447879 [debug] [Thread-2 (]: Began executing node model.tasty_bytes.raw_customer_customer_loyalty
+[0m03:55:35.449010 [debug] [Thread-2 (]: Finished running node model.tasty_bytes.raw_customer_customer_loyalty
+[0m03:55:35.449757 [debug] [Thread-2 (]: Began running node model.tasty_bytes.raw_pos_country
+[0m03:55:35.450646 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly model.tasty_bytes.raw_customer_customer_loyalty, now model.tasty_bytes.raw_pos_country)
+[0m03:55:35.451322 [debug] [Thread-2 (]: Began compiling node model.tasty_bytes.raw_pos_country
+[0m03:55:35.456919 [debug] [Thread-2 (]: Writing injected SQL for node "model.tasty_bytes.raw_pos_country"
+[0m03:55:35.457694 [debug] [Thread-2 (]: Began executing node model.tasty_bytes.raw_pos_country
+[0m03:55:35.458695 [debug] [Thread-2 (]: Finished running node model.tasty_bytes.raw_pos_country
+[0m03:55:35.459417 [debug] [Thread-2 (]: Began running node model.tasty_bytes.raw_pos_franchise
+[0m03:55:35.460193 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly model.tasty_bytes.raw_pos_country, now model.tasty_bytes.raw_pos_franchise)
+[0m03:55:35.460779 [debug] [Thread-2 (]: Began compiling node model.tasty_bytes.raw_pos_franchise
+[0m03:55:35.468160 [debug] [Thread-2 (]: Writing injected SQL for node "model.tasty_bytes.raw_pos_franchise"
+[0m03:55:35.469111 [debug] [Thread-2 (]: Began executing node model.tasty_bytes.raw_pos_franchise
+[0m03:55:35.470136 [debug] [Thread-2 (]: Finished running node model.tasty_bytes.raw_pos_franchise
+[0m03:55:35.470859 [debug] [Thread-2 (]: Began running node model.tasty_bytes.raw_pos_location
+[0m03:55:35.471684 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly model.tasty_bytes.raw_pos_franchise, now model.tasty_bytes.raw_pos_location)
+[0m03:55:35.472296 [debug] [Thread-2 (]: Began compiling node model.tasty_bytes.raw_pos_location
+[0m03:55:35.477706 [debug] [Thread-2 (]: Writing injected SQL for node "model.tasty_bytes.raw_pos_location"
+[0m03:55:35.478526 [debug] [Thread-2 (]: Began executing node model.tasty_bytes.raw_pos_location
+[0m03:55:35.479491 [debug] [Thread-2 (]: Finished running node model.tasty_bytes.raw_pos_location
+[0m03:55:35.480164 [debug] [Thread-2 (]: Began running node model.tasty_bytes.raw_pos_menu
+[0m03:55:35.480907 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly model.tasty_bytes.raw_pos_location, now model.tasty_bytes.raw_pos_menu)
+[0m03:55:35.481459 [debug] [Thread-2 (]: Began compiling node model.tasty_bytes.raw_pos_menu
+[0m03:55:35.486857 [debug] [Thread-2 (]: Writing injected SQL for node "model.tasty_bytes.raw_pos_menu"
+[0m03:55:35.487621 [debug] [Thread-2 (]: Began executing node model.tasty_bytes.raw_pos_menu
+[0m03:55:35.488598 [debug] [Thread-2 (]: Finished running node model.tasty_bytes.raw_pos_menu
+[0m03:55:35.489256 [debug] [Thread-2 (]: Began running node model.tasty_bytes.raw_pos_order_detail
+[0m03:55:35.490012 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly model.tasty_bytes.raw_pos_menu, now model.tasty_bytes.raw_pos_order_detail)
+[0m03:55:35.490584 [debug] [Thread-2 (]: Began compiling node model.tasty_bytes.raw_pos_order_detail
+[0m03:55:35.495906 [debug] [Thread-2 (]: Writing injected SQL for node "model.tasty_bytes.raw_pos_order_detail"
+[0m03:55:35.496965 [debug] [Thread-2 (]: Began executing node model.tasty_bytes.raw_pos_order_detail
+[0m03:55:35.497973 [debug] [Thread-2 (]: Finished running node model.tasty_bytes.raw_pos_order_detail
+[0m03:55:35.498710 [debug] [Thread-2 (]: Began running node model.tasty_bytes.raw_pos_order_header
+[0m03:55:35.499520 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly model.tasty_bytes.raw_pos_order_detail, now model.tasty_bytes.raw_pos_order_header)
+[0m03:55:35.500193 [debug] [Thread-2 (]: Began compiling node model.tasty_bytes.raw_pos_order_header
+[0m03:55:35.505642 [debug] [Thread-2 (]: Writing injected SQL for node "model.tasty_bytes.raw_pos_order_header"
+[0m03:55:35.506629 [debug] [Thread-2 (]: Began executing node model.tasty_bytes.raw_pos_order_header
+[0m03:55:35.507658 [debug] [Thread-2 (]: Finished running node model.tasty_bytes.raw_pos_order_header
+[0m03:55:35.508362 [debug] [Thread-2 (]: Began running node model.tasty_bytes.raw_pos_truck
+[0m03:55:35.509336 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly model.tasty_bytes.raw_pos_order_header, now model.tasty_bytes.raw_pos_truck)
+[0m03:55:35.509975 [debug] [Thread-2 (]: Began compiling node model.tasty_bytes.raw_pos_truck
+[0m03:55:35.517817 [debug] [Thread-2 (]: Writing injected SQL for node "model.tasty_bytes.raw_pos_truck"
+[0m03:55:35.518742 [debug] [Thread-2 (]: Began executing node model.tasty_bytes.raw_pos_truck
+[0m03:55:35.519723 [debug] [Thread-2 (]: Finished running node model.tasty_bytes.raw_pos_truck
+[0m03:55:35.520423 [debug] [Thread-2 (]: Began running node test.tasty_bytes.source_is_positive_amount_tb_101_COUNTRY_CITY_POPULATION.130bd567d8
+[0m03:55:35.521560 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly model.tasty_bytes.raw_pos_truck, now test.tasty_bytes.source_is_positive_amount_tb_101_COUNTRY_CITY_POPULATION.130bd567d8)
+[0m03:55:35.522181 [debug] [Thread-2 (]: Began compiling node test.tasty_bytes.source_is_positive_amount_tb_101_COUNTRY_CITY_POPULATION.130bd567d8
+[0m03:55:35.529010 [debug] [Thread-2 (]: Writing injected SQL for node "test.tasty_bytes.source_is_positive_amount_tb_101_COUNTRY_CITY_POPULATION.130bd567d8"
+[0m03:55:35.529841 [debug] [Thread-2 (]: Began executing node test.tasty_bytes.source_is_positive_amount_tb_101_COUNTRY_CITY_POPULATION.130bd567d8
+[0m03:55:35.530808 [debug] [Thread-2 (]: Finished running node test.tasty_bytes.source_is_positive_amount_tb_101_COUNTRY_CITY_POPULATION.130bd567d8
+[0m03:55:35.531470 [debug] [Thread-2 (]: Began running node test.tasty_bytes.source_is_positive_amount_tb_101_MENU_COST_OF_GOODS_USD.e1d254db35
+[0m03:55:35.532199 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly test.tasty_bytes.source_is_positive_amount_tb_101_COUNTRY_CITY_POPULATION.130bd567d8, now test.tasty_bytes.source_is_positive_amount_tb_101_MENU_COST_OF_GOODS_USD.e1d254db35)
+[0m03:55:35.532763 [debug] [Thread-2 (]: Began compiling node test.tasty_bytes.source_is_positive_amount_tb_101_MENU_COST_OF_GOODS_USD.e1d254db35
+[0m03:55:35.539610 [debug] [Thread-2 (]: Writing injected SQL for node "test.tasty_bytes.source_is_positive_amount_tb_101_MENU_COST_OF_GOODS_USD.e1d254db35"
+[0m03:55:35.540420 [debug] [Thread-2 (]: Began executing node test.tasty_bytes.source_is_positive_amount_tb_101_MENU_COST_OF_GOODS_USD.e1d254db35
+[0m03:55:35.541455 [debug] [Thread-2 (]: Finished running node test.tasty_bytes.source_is_positive_amount_tb_101_MENU_COST_OF_GOODS_USD.e1d254db35
+[0m03:55:35.542158 [debug] [Thread-2 (]: Began running node test.tasty_bytes.source_is_positive_amount_tb_101_MENU_SALE_PRICE_USD.e53617b4d4
+[0m03:55:35.542981 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly test.tasty_bytes.source_is_positive_amount_tb_101_MENU_COST_OF_GOODS_USD.e1d254db35, now test.tasty_bytes.source_is_positive_amount_tb_101_MENU_SALE_PRICE_USD.e53617b4d4)
+[0m03:55:35.543594 [debug] [Thread-2 (]: Began compiling node test.tasty_bytes.source_is_positive_amount_tb_101_MENU_SALE_PRICE_USD.e53617b4d4
+[0m03:55:35.550474 [debug] [Thread-2 (]: Writing injected SQL for node "test.tasty_bytes.source_is_positive_amount_tb_101_MENU_SALE_PRICE_USD.e53617b4d4"
+[0m03:55:35.551397 [debug] [Thread-2 (]: Began executing node test.tasty_bytes.source_is_positive_amount_tb_101_MENU_SALE_PRICE_USD.e53617b4d4
+[0m03:55:35.552389 [debug] [Thread-2 (]: Finished running node test.tasty_bytes.source_is_positive_amount_tb_101_MENU_SALE_PRICE_USD.e53617b4d4
+[0m03:55:35.553076 [debug] [Thread-2 (]: Began running node test.tasty_bytes.source_is_positive_amount_tb_101_ORDER_DETAIL_PRICE.7acc799762
+[0m03:55:35.553809 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly test.tasty_bytes.source_is_positive_amount_tb_101_MENU_SALE_PRICE_USD.e53617b4d4, now test.tasty_bytes.source_is_positive_amount_tb_101_ORDER_DETAIL_PRICE.7acc799762)
+[0m03:55:35.554410 [debug] [Thread-2 (]: Began compiling node test.tasty_bytes.source_is_positive_amount_tb_101_ORDER_DETAIL_PRICE.7acc799762
+[0m03:55:35.561727 [debug] [Thread-2 (]: Writing injected SQL for node "test.tasty_bytes.source_is_positive_amount_tb_101_ORDER_DETAIL_PRICE.7acc799762"
+[0m03:55:35.562692 [debug] [Thread-2 (]: Began executing node test.tasty_bytes.source_is_positive_amount_tb_101_ORDER_DETAIL_PRICE.7acc799762
+[0m03:55:35.563676 [debug] [Thread-2 (]: Finished running node test.tasty_bytes.source_is_positive_amount_tb_101_ORDER_DETAIL_PRICE.7acc799762
+[0m03:55:35.564374 [debug] [Thread-2 (]: Began running node test.tasty_bytes.source_is_positive_amount_tb_101_ORDER_DETAIL_QUANTITY.2597faa81d
+[0m03:55:35.565105 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly test.tasty_bytes.source_is_positive_amount_tb_101_ORDER_DETAIL_PRICE.7acc799762, now test.tasty_bytes.source_is_positive_amount_tb_101_ORDER_DETAIL_QUANTITY.2597faa81d)
+[0m03:55:35.565709 [debug] [Thread-2 (]: Began compiling node test.tasty_bytes.source_is_positive_amount_tb_101_ORDER_DETAIL_QUANTITY.2597faa81d
+[0m03:55:35.575508 [debug] [Thread-2 (]: Writing injected SQL for node "test.tasty_bytes.source_is_positive_amount_tb_101_ORDER_DETAIL_QUANTITY.2597faa81d"
+[0m03:55:35.576479 [debug] [Thread-2 (]: Began executing node test.tasty_bytes.source_is_positive_amount_tb_101_ORDER_DETAIL_QUANTITY.2597faa81d
+[0m03:55:35.577485 [debug] [Thread-2 (]: Finished running node test.tasty_bytes.source_is_positive_amount_tb_101_ORDER_DETAIL_QUANTITY.2597faa81d
+[0m03:55:35.578173 [debug] [Thread-2 (]: Began running node test.tasty_bytes.source_is_positive_amount_tb_101_ORDER_DETAIL_UNIT_PRICE.99e45830dc
+[0m03:55:35.579023 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly test.tasty_bytes.source_is_positive_amount_tb_101_ORDER_DETAIL_QUANTITY.2597faa81d, now test.tasty_bytes.source_is_positive_amount_tb_101_ORDER_DETAIL_UNIT_PRICE.99e45830dc)
+[0m03:55:35.579635 [debug] [Thread-2 (]: Began compiling node test.tasty_bytes.source_is_positive_amount_tb_101_ORDER_DETAIL_UNIT_PRICE.99e45830dc
+[0m03:55:35.586492 [debug] [Thread-2 (]: Writing injected SQL for node "test.tasty_bytes.source_is_positive_amount_tb_101_ORDER_DETAIL_UNIT_PRICE.99e45830dc"
+[0m03:55:35.587290 [debug] [Thread-2 (]: Began executing node test.tasty_bytes.source_is_positive_amount_tb_101_ORDER_DETAIL_UNIT_PRICE.99e45830dc
+[0m03:55:35.588249 [debug] [Thread-2 (]: Finished running node test.tasty_bytes.source_is_positive_amount_tb_101_ORDER_DETAIL_UNIT_PRICE.99e45830dc
+[0m03:55:35.588937 [debug] [Thread-2 (]: Began running node test.tasty_bytes.source_is_positive_amount_tb_101_ORDER_HEADER_ORDER_AMOUNT.b35835b220
+[0m03:55:35.589671 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly test.tasty_bytes.source_is_positive_amount_tb_101_ORDER_DETAIL_UNIT_PRICE.99e45830dc, now test.tasty_bytes.source_is_positive_amount_tb_101_ORDER_HEADER_ORDER_AMOUNT.b35835b220)
+[0m03:55:35.590242 [debug] [Thread-2 (]: Began compiling node test.tasty_bytes.source_is_positive_amount_tb_101_ORDER_HEADER_ORDER_AMOUNT.b35835b220
+[0m03:55:35.597140 [debug] [Thread-2 (]: Writing injected SQL for node "test.tasty_bytes.source_is_positive_amount_tb_101_ORDER_HEADER_ORDER_AMOUNT.b35835b220"
+[0m03:55:35.597953 [debug] [Thread-2 (]: Began executing node test.tasty_bytes.source_is_positive_amount_tb_101_ORDER_HEADER_ORDER_AMOUNT.b35835b220
+[0m03:55:35.598991 [debug] [Thread-2 (]: Finished running node test.tasty_bytes.source_is_positive_amount_tb_101_ORDER_HEADER_ORDER_AMOUNT.b35835b220
+[0m03:55:35.599718 [debug] [Thread-2 (]: Began running node test.tasty_bytes.source_is_positive_amount_tb_101_ORDER_HEADER_ORDER_TOTAL.05e5e19c46
+[0m03:55:35.600474 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly test.tasty_bytes.source_is_positive_amount_tb_101_ORDER_HEADER_ORDER_AMOUNT.b35835b220, now test.tasty_bytes.source_is_positive_amount_tb_101_ORDER_HEADER_ORDER_TOTAL.05e5e19c46)
+[0m03:55:35.601109 [debug] [Thread-2 (]: Began compiling node test.tasty_bytes.source_is_positive_amount_tb_101_ORDER_HEADER_ORDER_TOTAL.05e5e19c46
+[0m03:55:35.607944 [debug] [Thread-2 (]: Writing injected SQL for node "test.tasty_bytes.source_is_positive_amount_tb_101_ORDER_HEADER_ORDER_TOTAL.05e5e19c46"
+[0m03:55:35.608929 [debug] [Thread-2 (]: Began executing node test.tasty_bytes.source_is_positive_amount_tb_101_ORDER_HEADER_ORDER_TOTAL.05e5e19c46
+[0m03:55:35.609909 [debug] [Thread-2 (]: Finished running node test.tasty_bytes.source_is_positive_amount_tb_101_ORDER_HEADER_ORDER_TOTAL.05e5e19c46
+[0m03:55:35.610676 [debug] [Thread-2 (]: Began running node test.tasty_bytes.source_not_null_tb_101_COUNTRY_COUNTRY.9f45db2a95
+[0m03:55:35.611439 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly test.tasty_bytes.source_is_positive_amount_tb_101_ORDER_HEADER_ORDER_TOTAL.05e5e19c46, now test.tasty_bytes.source_not_null_tb_101_COUNTRY_COUNTRY.9f45db2a95)
+[0m03:55:35.612033 [debug] [Thread-2 (]: Began compiling node test.tasty_bytes.source_not_null_tb_101_COUNTRY_COUNTRY.9f45db2a95
+[0m03:55:35.625047 [debug] [Thread-2 (]: Writing injected SQL for node "test.tasty_bytes.source_not_null_tb_101_COUNTRY_COUNTRY.9f45db2a95"
+[0m03:55:35.625976 [debug] [Thread-2 (]: Began executing node test.tasty_bytes.source_not_null_tb_101_COUNTRY_COUNTRY.9f45db2a95
+[0m03:55:35.626999 [debug] [Thread-2 (]: Finished running node test.tasty_bytes.source_not_null_tb_101_COUNTRY_COUNTRY.9f45db2a95
+[0m03:55:35.627681 [debug] [Thread-2 (]: Began running node test.tasty_bytes.source_not_null_tb_101_COUNTRY_COUNTRY_ID.2d8d874ddc
+[0m03:55:35.628449 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly test.tasty_bytes.source_not_null_tb_101_COUNTRY_COUNTRY.9f45db2a95, now test.tasty_bytes.source_not_null_tb_101_COUNTRY_COUNTRY_ID.2d8d874ddc)
+[0m03:55:35.629023 [debug] [Thread-2 (]: Began compiling node test.tasty_bytes.source_not_null_tb_101_COUNTRY_COUNTRY_ID.2d8d874ddc
+[0m03:55:35.638824 [debug] [Thread-2 (]: Writing injected SQL for node "test.tasty_bytes.source_not_null_tb_101_COUNTRY_COUNTRY_ID.2d8d874ddc"
+[0m03:55:35.639736 [debug] [Thread-2 (]: Began executing node test.tasty_bytes.source_not_null_tb_101_COUNTRY_COUNTRY_ID.2d8d874ddc
+[0m03:55:35.640725 [debug] [Thread-2 (]: Finished running node test.tasty_bytes.source_not_null_tb_101_COUNTRY_COUNTRY_ID.2d8d874ddc
+[0m03:55:35.641406 [debug] [Thread-2 (]: Began running node test.tasty_bytes.source_not_null_tb_101_COUNTRY_ISO_COUNTRY.79d5688eb2
+[0m03:55:35.642153 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly test.tasty_bytes.source_not_null_tb_101_COUNTRY_COUNTRY_ID.2d8d874ddc, now test.tasty_bytes.source_not_null_tb_101_COUNTRY_ISO_COUNTRY.79d5688eb2)
+[0m03:55:35.642740 [debug] [Thread-2 (]: Began compiling node test.tasty_bytes.source_not_null_tb_101_COUNTRY_ISO_COUNTRY.79d5688eb2
+[0m03:55:35.649568 [debug] [Thread-2 (]: Writing injected SQL for node "test.tasty_bytes.source_not_null_tb_101_COUNTRY_ISO_COUNTRY.79d5688eb2"
+[0m03:55:35.650399 [debug] [Thread-2 (]: Began executing node test.tasty_bytes.source_not_null_tb_101_COUNTRY_ISO_COUNTRY.79d5688eb2
+[0m03:55:35.651364 [debug] [Thread-2 (]: Finished running node test.tasty_bytes.source_not_null_tb_101_COUNTRY_ISO_COUNTRY.79d5688eb2
+[0m03:55:35.652037 [debug] [Thread-2 (]: Began running node test.tasty_bytes.source_not_null_tb_101_FRANCHISE_E_MAIL.94139aefa3
+[0m03:55:35.652773 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly test.tasty_bytes.source_not_null_tb_101_COUNTRY_ISO_COUNTRY.79d5688eb2, now test.tasty_bytes.source_not_null_tb_101_FRANCHISE_E_MAIL.94139aefa3)
+[0m03:55:35.653331 [debug] [Thread-2 (]: Began compiling node test.tasty_bytes.source_not_null_tb_101_FRANCHISE_E_MAIL.94139aefa3
+[0m03:55:35.660652 [debug] [Thread-2 (]: Writing injected SQL for node "test.tasty_bytes.source_not_null_tb_101_FRANCHISE_E_MAIL.94139aefa3"
+[0m03:55:35.661540 [debug] [Thread-2 (]: Began executing node test.tasty_bytes.source_not_null_tb_101_FRANCHISE_E_MAIL.94139aefa3
+[0m03:55:35.662555 [debug] [Thread-2 (]: Finished running node test.tasty_bytes.source_not_null_tb_101_FRANCHISE_E_MAIL.94139aefa3
+[0m03:55:35.663245 [debug] [Thread-2 (]: Began running node test.tasty_bytes.source_not_null_tb_101_FRANCHISE_FIRST_NAME.056c16bae3
+[0m03:55:35.664010 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly test.tasty_bytes.source_not_null_tb_101_FRANCHISE_E_MAIL.94139aefa3, now test.tasty_bytes.source_not_null_tb_101_FRANCHISE_FIRST_NAME.056c16bae3)
+[0m03:55:35.664612 [debug] [Thread-2 (]: Began compiling node test.tasty_bytes.source_not_null_tb_101_FRANCHISE_FIRST_NAME.056c16bae3
+[0m03:55:35.671601 [debug] [Thread-2 (]: Writing injected SQL for node "test.tasty_bytes.source_not_null_tb_101_FRANCHISE_FIRST_NAME.056c16bae3"
+[0m03:55:35.672432 [debug] [Thread-2 (]: Began executing node test.tasty_bytes.source_not_null_tb_101_FRANCHISE_FIRST_NAME.056c16bae3
+[0m03:55:35.673397 [debug] [Thread-2 (]: Finished running node test.tasty_bytes.source_not_null_tb_101_FRANCHISE_FIRST_NAME.056c16bae3
+[0m03:55:35.674074 [debug] [Thread-2 (]: Began running node test.tasty_bytes.source_not_null_tb_101_FRANCHISE_FRANCHISE_ID.3cf7f90a9a
+[0m03:55:35.674840 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly test.tasty_bytes.source_not_null_tb_101_FRANCHISE_FIRST_NAME.056c16bae3, now test.tasty_bytes.source_not_null_tb_101_FRANCHISE_FRANCHISE_ID.3cf7f90a9a)
+[0m03:55:35.675396 [debug] [Thread-2 (]: Began compiling node test.tasty_bytes.source_not_null_tb_101_FRANCHISE_FRANCHISE_ID.3cf7f90a9a
+[0m03:55:35.682757 [debug] [Thread-2 (]: Writing injected SQL for node "test.tasty_bytes.source_not_null_tb_101_FRANCHISE_FRANCHISE_ID.3cf7f90a9a"
+[0m03:55:35.683578 [debug] [Thread-2 (]: Began executing node test.tasty_bytes.source_not_null_tb_101_FRANCHISE_FRANCHISE_ID.3cf7f90a9a
+[0m03:55:35.684517 [debug] [Thread-2 (]: Finished running node test.tasty_bytes.source_not_null_tb_101_FRANCHISE_FRANCHISE_ID.3cf7f90a9a
+[0m03:55:35.685192 [debug] [Thread-2 (]: Began running node test.tasty_bytes.source_not_null_tb_101_FRANCHISE_LAST_NAME.678fd70b72
+[0m03:55:35.686040 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly test.tasty_bytes.source_not_null_tb_101_FRANCHISE_FRANCHISE_ID.3cf7f90a9a, now test.tasty_bytes.source_not_null_tb_101_FRANCHISE_LAST_NAME.678fd70b72)
+[0m03:55:35.686711 [debug] [Thread-2 (]: Began compiling node test.tasty_bytes.source_not_null_tb_101_FRANCHISE_LAST_NAME.678fd70b72
+[0m03:55:35.696471 [debug] [Thread-2 (]: Writing injected SQL for node "test.tasty_bytes.source_not_null_tb_101_FRANCHISE_LAST_NAME.678fd70b72"
+[0m03:55:35.697355 [debug] [Thread-2 (]: Began executing node test.tasty_bytes.source_not_null_tb_101_FRANCHISE_LAST_NAME.678fd70b72
+[0m03:55:35.698393 [debug] [Thread-2 (]: Finished running node test.tasty_bytes.source_not_null_tb_101_FRANCHISE_LAST_NAME.678fd70b72
+[0m03:55:35.699109 [debug] [Thread-2 (]: Began running node test.tasty_bytes.source_not_null_tb_101_LOCATION_CITY.24d92239fe
+[0m03:55:35.699855 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly test.tasty_bytes.source_not_null_tb_101_FRANCHISE_LAST_NAME.678fd70b72, now test.tasty_bytes.source_not_null_tb_101_LOCATION_CITY.24d92239fe)
+[0m03:55:35.700469 [debug] [Thread-2 (]: Began compiling node test.tasty_bytes.source_not_null_tb_101_LOCATION_CITY.24d92239fe
+[0m03:55:35.707851 [debug] [Thread-2 (]: Writing injected SQL for node "test.tasty_bytes.source_not_null_tb_101_LOCATION_CITY.24d92239fe"
+[0m03:55:35.708739 [debug] [Thread-2 (]: Began executing node test.tasty_bytes.source_not_null_tb_101_LOCATION_CITY.24d92239fe
+[0m03:55:35.709711 [debug] [Thread-2 (]: Finished running node test.tasty_bytes.source_not_null_tb_101_LOCATION_CITY.24d92239fe
+[0m03:55:35.710436 [debug] [Thread-2 (]: Began running node test.tasty_bytes.source_not_null_tb_101_LOCATION_COUNTRY.7644c459be
+[0m03:55:35.711181 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly test.tasty_bytes.source_not_null_tb_101_LOCATION_CITY.24d92239fe, now test.tasty_bytes.source_not_null_tb_101_LOCATION_COUNTRY.7644c459be)
+[0m03:55:35.711801 [debug] [Thread-2 (]: Began compiling node test.tasty_bytes.source_not_null_tb_101_LOCATION_COUNTRY.7644c459be
+[0m03:55:35.718777 [debug] [Thread-2 (]: Writing injected SQL for node "test.tasty_bytes.source_not_null_tb_101_LOCATION_COUNTRY.7644c459be"
+[0m03:55:35.719674 [debug] [Thread-2 (]: Began executing node test.tasty_bytes.source_not_null_tb_101_LOCATION_COUNTRY.7644c459be
+[0m03:55:35.720618 [debug] [Thread-2 (]: Finished running node test.tasty_bytes.source_not_null_tb_101_LOCATION_COUNTRY.7644c459be
+[0m03:55:35.721286 [debug] [Thread-2 (]: Began running node test.tasty_bytes.source_not_null_tb_101_LOCATION_ISO_COUNTRY_CODE.603ac1a599
+[0m03:55:35.722015 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly test.tasty_bytes.source_not_null_tb_101_LOCATION_COUNTRY.7644c459be, now test.tasty_bytes.source_not_null_tb_101_LOCATION_ISO_COUNTRY_CODE.603ac1a599)
+[0m03:55:35.722672 [debug] [Thread-2 (]: Began compiling node test.tasty_bytes.source_not_null_tb_101_LOCATION_ISO_COUNTRY_CODE.603ac1a599
+[0m03:55:35.729829 [debug] [Thread-2 (]: Writing injected SQL for node "test.tasty_bytes.source_not_null_tb_101_LOCATION_ISO_COUNTRY_CODE.603ac1a599"
+[0m03:55:35.730651 [debug] [Thread-2 (]: Began executing node test.tasty_bytes.source_not_null_tb_101_LOCATION_ISO_COUNTRY_CODE.603ac1a599
+[0m03:55:35.731600 [debug] [Thread-2 (]: Finished running node test.tasty_bytes.source_not_null_tb_101_LOCATION_ISO_COUNTRY_CODE.603ac1a599
+[0m03:55:35.732273 [debug] [Thread-2 (]: Began running node test.tasty_bytes.source_not_null_tb_101_LOCATION_LOCATION.5374ad2534
+[0m03:55:35.733007 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly test.tasty_bytes.source_not_null_tb_101_LOCATION_ISO_COUNTRY_CODE.603ac1a599, now test.tasty_bytes.source_not_null_tb_101_LOCATION_LOCATION.5374ad2534)
+[0m03:55:35.733588 [debug] [Thread-2 (]: Began compiling node test.tasty_bytes.source_not_null_tb_101_LOCATION_LOCATION.5374ad2534
+[0m03:55:35.740448 [debug] [Thread-2 (]: Writing injected SQL for node "test.tasty_bytes.source_not_null_tb_101_LOCATION_LOCATION.5374ad2534"
+[0m03:55:35.741300 [debug] [Thread-2 (]: Began executing node test.tasty_bytes.source_not_null_tb_101_LOCATION_LOCATION.5374ad2534
+[0m03:55:35.742275 [debug] [Thread-2 (]: Finished running node test.tasty_bytes.source_not_null_tb_101_LOCATION_LOCATION.5374ad2534
+[0m03:55:35.742946 [debug] [Thread-2 (]: Began running node test.tasty_bytes.source_not_null_tb_101_LOCATION_LOCATION_ID.45799b7311
+[0m03:55:35.743686 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly test.tasty_bytes.source_not_null_tb_101_LOCATION_LOCATION.5374ad2534, now test.tasty_bytes.source_not_null_tb_101_LOCATION_LOCATION_ID.45799b7311)
+[0m03:55:35.744294 [debug] [Thread-2 (]: Began compiling node test.tasty_bytes.source_not_null_tb_101_LOCATION_LOCATION_ID.45799b7311
+[0m03:55:35.754073 [debug] [Thread-2 (]: Writing injected SQL for node "test.tasty_bytes.source_not_null_tb_101_LOCATION_LOCATION_ID.45799b7311"
+[0m03:55:35.754926 [debug] [Thread-2 (]: Began executing node test.tasty_bytes.source_not_null_tb_101_LOCATION_LOCATION_ID.45799b7311
+[0m03:55:35.755872 [debug] [Thread-2 (]: Finished running node test.tasty_bytes.source_not_null_tb_101_LOCATION_LOCATION_ID.45799b7311
+[0m03:55:35.756594 [debug] [Thread-2 (]: Began running node test.tasty_bytes.source_not_null_tb_101_MENU_MENU_ID.ddb5797448
+[0m03:55:35.757374 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly test.tasty_bytes.source_not_null_tb_101_LOCATION_LOCATION_ID.45799b7311, now test.tasty_bytes.source_not_null_tb_101_MENU_MENU_ID.ddb5797448)
+[0m03:55:35.757974 [debug] [Thread-2 (]: Began compiling node test.tasty_bytes.source_not_null_tb_101_MENU_MENU_ID.ddb5797448
+[0m03:55:35.764782 [debug] [Thread-2 (]: Writing injected SQL for node "test.tasty_bytes.source_not_null_tb_101_MENU_MENU_ID.ddb5797448"
+[0m03:55:35.765660 [debug] [Thread-2 (]: Began executing node test.tasty_bytes.source_not_null_tb_101_MENU_MENU_ID.ddb5797448
+[0m03:55:35.766649 [debug] [Thread-2 (]: Finished running node test.tasty_bytes.source_not_null_tb_101_MENU_MENU_ID.ddb5797448
+[0m03:55:35.767333 [debug] [Thread-2 (]: Began running node test.tasty_bytes.source_not_null_tb_101_MENU_MENU_ITEM_ID.03a3d0e787
+[0m03:55:35.768067 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly test.tasty_bytes.source_not_null_tb_101_MENU_MENU_ID.ddb5797448, now test.tasty_bytes.source_not_null_tb_101_MENU_MENU_ITEM_ID.03a3d0e787)
+[0m03:55:35.768700 [debug] [Thread-2 (]: Began compiling node test.tasty_bytes.source_not_null_tb_101_MENU_MENU_ITEM_ID.03a3d0e787
+[0m03:55:35.775805 [debug] [Thread-2 (]: Writing injected SQL for node "test.tasty_bytes.source_not_null_tb_101_MENU_MENU_ITEM_ID.03a3d0e787"
+[0m03:55:35.776627 [debug] [Thread-2 (]: Began executing node test.tasty_bytes.source_not_null_tb_101_MENU_MENU_ITEM_ID.03a3d0e787
+[0m03:55:35.777585 [debug] [Thread-2 (]: Finished running node test.tasty_bytes.source_not_null_tb_101_MENU_MENU_ITEM_ID.03a3d0e787
+[0m03:55:35.778288 [debug] [Thread-2 (]: Began running node test.tasty_bytes.source_not_null_tb_101_MENU_MENU_ITEM_NAME.d3405fdd19
+[0m03:55:35.779053 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly test.tasty_bytes.source_not_null_tb_101_MENU_MENU_ITEM_ID.03a3d0e787, now test.tasty_bytes.source_not_null_tb_101_MENU_MENU_ITEM_NAME.d3405fdd19)
+[0m03:55:35.779618 [debug] [Thread-2 (]: Began compiling node test.tasty_bytes.source_not_null_tb_101_MENU_MENU_ITEM_NAME.d3405fdd19
+[0m03:55:35.786400 [debug] [Thread-2 (]: Writing injected SQL for node "test.tasty_bytes.source_not_null_tb_101_MENU_MENU_ITEM_NAME.d3405fdd19"
+[0m03:55:35.787276 [debug] [Thread-2 (]: Began executing node test.tasty_bytes.source_not_null_tb_101_MENU_MENU_ITEM_NAME.d3405fdd19
+[0m03:55:35.788294 [debug] [Thread-2 (]: Finished running node test.tasty_bytes.source_not_null_tb_101_MENU_MENU_ITEM_NAME.d3405fdd19
+[0m03:55:35.788993 [debug] [Thread-2 (]: Began running node test.tasty_bytes.source_not_null_tb_101_MENU_MENU_TYPE_ID.949e435443
+[0m03:55:35.789744 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly test.tasty_bytes.source_not_null_tb_101_MENU_MENU_ITEM_NAME.d3405fdd19, now test.tasty_bytes.source_not_null_tb_101_MENU_MENU_TYPE_ID.949e435443)
+[0m03:55:35.790363 [debug] [Thread-2 (]: Began compiling node test.tasty_bytes.source_not_null_tb_101_MENU_MENU_TYPE_ID.949e435443
+[0m03:55:35.800237 [debug] [Thread-2 (]: Writing injected SQL for node "test.tasty_bytes.source_not_null_tb_101_MENU_MENU_TYPE_ID.949e435443"
+[0m03:55:35.801103 [debug] [Thread-2 (]: Began executing node test.tasty_bytes.source_not_null_tb_101_MENU_MENU_TYPE_ID.949e435443
+[0m03:55:35.802084 [debug] [Thread-2 (]: Finished running node test.tasty_bytes.source_not_null_tb_101_MENU_MENU_TYPE_ID.949e435443
+[0m03:55:35.802825 [debug] [Thread-2 (]: Began running node test.tasty_bytes.source_not_null_tb_101_ORDER_DETAIL_LINE_NUMBER.20a68fe825
+[0m03:55:35.803559 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly test.tasty_bytes.source_not_null_tb_101_MENU_MENU_TYPE_ID.949e435443, now test.tasty_bytes.source_not_null_tb_101_ORDER_DETAIL_LINE_NUMBER.20a68fe825)
+[0m03:55:35.804118 [debug] [Thread-2 (]: Began compiling node test.tasty_bytes.source_not_null_tb_101_ORDER_DETAIL_LINE_NUMBER.20a68fe825
+[0m03:55:35.811225 [debug] [Thread-2 (]: Writing injected SQL for node "test.tasty_bytes.source_not_null_tb_101_ORDER_DETAIL_LINE_NUMBER.20a68fe825"
+[0m03:55:35.812073 [debug] [Thread-2 (]: Began executing node test.tasty_bytes.source_not_null_tb_101_ORDER_DETAIL_LINE_NUMBER.20a68fe825
+[0m03:55:35.813076 [debug] [Thread-2 (]: Finished running node test.tasty_bytes.source_not_null_tb_101_ORDER_DETAIL_LINE_NUMBER.20a68fe825
+[0m03:55:35.813806 [debug] [Thread-2 (]: Began running node test.tasty_bytes.source_not_null_tb_101_ORDER_DETAIL_MENU_ITEM_ID.e51a9e95ae
+[0m03:55:35.814605 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly test.tasty_bytes.source_not_null_tb_101_ORDER_DETAIL_LINE_NUMBER.20a68fe825, now test.tasty_bytes.source_not_null_tb_101_ORDER_DETAIL_MENU_ITEM_ID.e51a9e95ae)
+[0m03:55:35.815214 [debug] [Thread-2 (]: Began compiling node test.tasty_bytes.source_not_null_tb_101_ORDER_DETAIL_MENU_ITEM_ID.e51a9e95ae
+[0m03:55:35.822582 [debug] [Thread-2 (]: Writing injected SQL for node "test.tasty_bytes.source_not_null_tb_101_ORDER_DETAIL_MENU_ITEM_ID.e51a9e95ae"
+[0m03:55:35.823429 [debug] [Thread-2 (]: Began executing node test.tasty_bytes.source_not_null_tb_101_ORDER_DETAIL_MENU_ITEM_ID.e51a9e95ae
+[0m03:55:35.824395 [debug] [Thread-2 (]: Finished running node test.tasty_bytes.source_not_null_tb_101_ORDER_DETAIL_MENU_ITEM_ID.e51a9e95ae
+[0m03:55:35.825075 [debug] [Thread-2 (]: Began running node test.tasty_bytes.source_not_null_tb_101_ORDER_DETAIL_ORDER_DETAIL_ID.508a68e85b
+[0m03:55:35.825833 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly test.tasty_bytes.source_not_null_tb_101_ORDER_DETAIL_MENU_ITEM_ID.e51a9e95ae, now test.tasty_bytes.source_not_null_tb_101_ORDER_DETAIL_ORDER_DETAIL_ID.508a68e85b)
+[0m03:55:35.826437 [debug] [Thread-2 (]: Began compiling node test.tasty_bytes.source_not_null_tb_101_ORDER_DETAIL_ORDER_DETAIL_ID.508a68e85b
+[0m03:55:35.833567 [debug] [Thread-2 (]: Writing injected SQL for node "test.tasty_bytes.source_not_null_tb_101_ORDER_DETAIL_ORDER_DETAIL_ID.508a68e85b"
+[0m03:55:35.834428 [debug] [Thread-2 (]: Began executing node test.tasty_bytes.source_not_null_tb_101_ORDER_DETAIL_ORDER_DETAIL_ID.508a68e85b
+[0m03:55:35.835392 [debug] [Thread-2 (]: Finished running node test.tasty_bytes.source_not_null_tb_101_ORDER_DETAIL_ORDER_DETAIL_ID.508a68e85b
+[0m03:55:35.836070 [debug] [Thread-2 (]: Began running node test.tasty_bytes.source_not_null_tb_101_ORDER_DETAIL_ORDER_ID.d3eb8df92b
+[0m03:55:35.836814 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly test.tasty_bytes.source_not_null_tb_101_ORDER_DETAIL_ORDER_DETAIL_ID.508a68e85b, now test.tasty_bytes.source_not_null_tb_101_ORDER_DETAIL_ORDER_ID.d3eb8df92b)
+[0m03:55:35.837376 [debug] [Thread-2 (]: Began compiling node test.tasty_bytes.source_not_null_tb_101_ORDER_DETAIL_ORDER_ID.d3eb8df92b
+[0m03:55:35.844631 [debug] [Thread-2 (]: Writing injected SQL for node "test.tasty_bytes.source_not_null_tb_101_ORDER_DETAIL_ORDER_ID.d3eb8df92b"
+[0m03:55:35.845464 [debug] [Thread-2 (]: Began executing node test.tasty_bytes.source_not_null_tb_101_ORDER_DETAIL_ORDER_ID.d3eb8df92b
+[0m03:55:35.846442 [debug] [Thread-2 (]: Finished running node test.tasty_bytes.source_not_null_tb_101_ORDER_DETAIL_ORDER_ID.d3eb8df92b
+[0m03:55:35.847122 [debug] [Thread-2 (]: Began running node test.tasty_bytes.source_not_null_tb_101_ORDER_DETAIL_QUANTITY.f5dd97ef6b
+[0m03:55:35.847866 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly test.tasty_bytes.source_not_null_tb_101_ORDER_DETAIL_ORDER_ID.d3eb8df92b, now test.tasty_bytes.source_not_null_tb_101_ORDER_DETAIL_QUANTITY.f5dd97ef6b)
+[0m03:55:35.848491 [debug] [Thread-2 (]: Began compiling node test.tasty_bytes.source_not_null_tb_101_ORDER_DETAIL_QUANTITY.f5dd97ef6b
+[0m03:55:35.858601 [debug] [Thread-2 (]: Writing injected SQL for node "test.tasty_bytes.source_not_null_tb_101_ORDER_DETAIL_QUANTITY.f5dd97ef6b"
+[0m03:55:35.859451 [debug] [Thread-2 (]: Began executing node test.tasty_bytes.source_not_null_tb_101_ORDER_DETAIL_QUANTITY.f5dd97ef6b
+[0m03:55:35.860426 [debug] [Thread-2 (]: Finished running node test.tasty_bytes.source_not_null_tb_101_ORDER_DETAIL_QUANTITY.f5dd97ef6b
+[0m03:55:35.861128 [debug] [Thread-2 (]: Began running node test.tasty_bytes.source_not_null_tb_101_ORDER_HEADER_LOCATION_ID.3af58c1124
+[0m03:55:35.861890 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly test.tasty_bytes.source_not_null_tb_101_ORDER_DETAIL_QUANTITY.f5dd97ef6b, now test.tasty_bytes.source_not_null_tb_101_ORDER_HEADER_LOCATION_ID.3af58c1124)
+[0m03:55:35.862543 [debug] [Thread-2 (]: Began compiling node test.tasty_bytes.source_not_null_tb_101_ORDER_HEADER_LOCATION_ID.3af58c1124
+[0m03:55:35.869726 [debug] [Thread-2 (]: Writing injected SQL for node "test.tasty_bytes.source_not_null_tb_101_ORDER_HEADER_LOCATION_ID.3af58c1124"
+[0m03:55:35.870622 [debug] [Thread-2 (]: Began executing node test.tasty_bytes.source_not_null_tb_101_ORDER_HEADER_LOCATION_ID.3af58c1124
+[0m03:55:35.871622 [debug] [Thread-2 (]: Finished running node test.tasty_bytes.source_not_null_tb_101_ORDER_HEADER_LOCATION_ID.3af58c1124
+[0m03:55:35.872322 [debug] [Thread-2 (]: Began running node test.tasty_bytes.source_not_null_tb_101_ORDER_HEADER_ORDER_AMOUNT.404e7e4a87
+[0m03:55:35.873094 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly test.tasty_bytes.source_not_null_tb_101_ORDER_HEADER_LOCATION_ID.3af58c1124, now test.tasty_bytes.source_not_null_tb_101_ORDER_HEADER_ORDER_AMOUNT.404e7e4a87)
+[0m03:55:35.873659 [debug] [Thread-2 (]: Began compiling node test.tasty_bytes.source_not_null_tb_101_ORDER_HEADER_ORDER_AMOUNT.404e7e4a87
+[0m03:55:35.881017 [debug] [Thread-2 (]: Writing injected SQL for node "test.tasty_bytes.source_not_null_tb_101_ORDER_HEADER_ORDER_AMOUNT.404e7e4a87"
+[0m03:55:35.881932 [debug] [Thread-2 (]: Began executing node test.tasty_bytes.source_not_null_tb_101_ORDER_HEADER_ORDER_AMOUNT.404e7e4a87
+[0m03:55:35.882951 [debug] [Thread-2 (]: Finished running node test.tasty_bytes.source_not_null_tb_101_ORDER_HEADER_ORDER_AMOUNT.404e7e4a87
+[0m03:55:35.883638 [debug] [Thread-2 (]: Began running node test.tasty_bytes.source_not_null_tb_101_ORDER_HEADER_ORDER_CURRENCY.1b03c1fa5d
+[0m03:55:35.884418 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly test.tasty_bytes.source_not_null_tb_101_ORDER_HEADER_ORDER_AMOUNT.404e7e4a87, now test.tasty_bytes.source_not_null_tb_101_ORDER_HEADER_ORDER_CURRENCY.1b03c1fa5d)
+[0m03:55:35.884997 [debug] [Thread-2 (]: Began compiling node test.tasty_bytes.source_not_null_tb_101_ORDER_HEADER_ORDER_CURRENCY.1b03c1fa5d
+[0m03:55:35.892100 [debug] [Thread-2 (]: Writing injected SQL for node "test.tasty_bytes.source_not_null_tb_101_ORDER_HEADER_ORDER_CURRENCY.1b03c1fa5d"
+[0m03:55:35.893030 [debug] [Thread-2 (]: Began executing node test.tasty_bytes.source_not_null_tb_101_ORDER_HEADER_ORDER_CURRENCY.1b03c1fa5d
+[0m03:55:35.893983 [debug] [Thread-2 (]: Finished running node test.tasty_bytes.source_not_null_tb_101_ORDER_HEADER_ORDER_CURRENCY.1b03c1fa5d
+[0m03:55:35.894669 [debug] [Thread-2 (]: Began running node test.tasty_bytes.source_not_null_tb_101_ORDER_HEADER_ORDER_ID.a1ab93929e
+[0m03:55:35.895393 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly test.tasty_bytes.source_not_null_tb_101_ORDER_HEADER_ORDER_CURRENCY.1b03c1fa5d, now test.tasty_bytes.source_not_null_tb_101_ORDER_HEADER_ORDER_ID.a1ab93929e)
+[0m03:55:35.895960 [debug] [Thread-2 (]: Began compiling node test.tasty_bytes.source_not_null_tb_101_ORDER_HEADER_ORDER_ID.a1ab93929e
+[0m03:55:35.903192 [debug] [Thread-2 (]: Writing injected SQL for node "test.tasty_bytes.source_not_null_tb_101_ORDER_HEADER_ORDER_ID.a1ab93929e"
+[0m03:55:35.903999 [debug] [Thread-2 (]: Began executing node test.tasty_bytes.source_not_null_tb_101_ORDER_HEADER_ORDER_ID.a1ab93929e
+[0m03:55:35.905622 [debug] [Thread-2 (]: Finished running node test.tasty_bytes.source_not_null_tb_101_ORDER_HEADER_ORDER_ID.a1ab93929e
+[0m03:55:35.906529 [debug] [Thread-2 (]: Began running node test.tasty_bytes.source_not_null_tb_101_ORDER_HEADER_ORDER_TOTAL.bdafd6629f
+[0m03:55:35.907888 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly test.tasty_bytes.source_not_null_tb_101_ORDER_HEADER_ORDER_ID.a1ab93929e, now test.tasty_bytes.source_not_null_tb_101_ORDER_HEADER_ORDER_TOTAL.bdafd6629f)
+[0m03:55:35.909469 [debug] [Thread-2 (]: Began compiling node test.tasty_bytes.source_not_null_tb_101_ORDER_HEADER_ORDER_TOTAL.bdafd6629f
+[0m03:55:35.924513 [debug] [Thread-2 (]: Writing injected SQL for node "test.tasty_bytes.source_not_null_tb_101_ORDER_HEADER_ORDER_TOTAL.bdafd6629f"
+[0m03:55:35.925365 [debug] [Thread-2 (]: Began executing node test.tasty_bytes.source_not_null_tb_101_ORDER_HEADER_ORDER_TOTAL.bdafd6629f
+[0m03:55:35.926334 [debug] [Thread-2 (]: Finished running node test.tasty_bytes.source_not_null_tb_101_ORDER_HEADER_ORDER_TOTAL.bdafd6629f
+[0m03:55:35.927013 [debug] [Thread-2 (]: Began running node test.tasty_bytes.source_not_null_tb_101_ORDER_HEADER_ORDER_TS.5ad1f73d33
+[0m03:55:35.927892 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly test.tasty_bytes.source_not_null_tb_101_ORDER_HEADER_ORDER_TOTAL.bdafd6629f, now test.tasty_bytes.source_not_null_tb_101_ORDER_HEADER_ORDER_TS.5ad1f73d33)
+[0m03:55:35.928756 [debug] [Thread-2 (]: Began compiling node test.tasty_bytes.source_not_null_tb_101_ORDER_HEADER_ORDER_TS.5ad1f73d33
+[0m03:55:35.937157 [debug] [Thread-2 (]: Writing injected SQL for node "test.tasty_bytes.source_not_null_tb_101_ORDER_HEADER_ORDER_TS.5ad1f73d33"
+[0m03:55:35.937944 [debug] [Thread-2 (]: Began executing node test.tasty_bytes.source_not_null_tb_101_ORDER_HEADER_ORDER_TS.5ad1f73d33
+[0m03:55:35.938917 [debug] [Thread-2 (]: Finished running node test.tasty_bytes.source_not_null_tb_101_ORDER_HEADER_ORDER_TS.5ad1f73d33
+[0m03:55:35.939587 [debug] [Thread-2 (]: Began running node test.tasty_bytes.source_not_null_tb_101_ORDER_HEADER_TRUCK_ID.77ae80a1f7
+[0m03:55:35.940295 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly test.tasty_bytes.source_not_null_tb_101_ORDER_HEADER_ORDER_TS.5ad1f73d33, now test.tasty_bytes.source_not_null_tb_101_ORDER_HEADER_TRUCK_ID.77ae80a1f7)
+[0m03:55:35.940852 [debug] [Thread-2 (]: Began compiling node test.tasty_bytes.source_not_null_tb_101_ORDER_HEADER_TRUCK_ID.77ae80a1f7
+[0m03:55:35.947427 [debug] [Thread-2 (]: Writing injected SQL for node "test.tasty_bytes.source_not_null_tb_101_ORDER_HEADER_TRUCK_ID.77ae80a1f7"
+[0m03:55:35.948177 [debug] [Thread-2 (]: Began executing node test.tasty_bytes.source_not_null_tb_101_ORDER_HEADER_TRUCK_ID.77ae80a1f7
+[0m03:55:35.949143 [debug] [Thread-2 (]: Finished running node test.tasty_bytes.source_not_null_tb_101_ORDER_HEADER_TRUCK_ID.77ae80a1f7
+[0m03:55:35.949804 [debug] [Thread-2 (]: Began running node test.tasty_bytes.source_not_null_tb_101_TRUCK_COUNTRY.1267ff037a
+[0m03:55:35.950516 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly test.tasty_bytes.source_not_null_tb_101_ORDER_HEADER_TRUCK_ID.77ae80a1f7, now test.tasty_bytes.source_not_null_tb_101_TRUCK_COUNTRY.1267ff037a)
+[0m03:55:35.951066 [debug] [Thread-2 (]: Began compiling node test.tasty_bytes.source_not_null_tb_101_TRUCK_COUNTRY.1267ff037a
+[0m03:55:35.957807 [debug] [Thread-2 (]: Writing injected SQL for node "test.tasty_bytes.source_not_null_tb_101_TRUCK_COUNTRY.1267ff037a"
+[0m03:55:35.958595 [debug] [Thread-2 (]: Began executing node test.tasty_bytes.source_not_null_tb_101_TRUCK_COUNTRY.1267ff037a
+[0m03:55:35.959520 [debug] [Thread-2 (]: Finished running node test.tasty_bytes.source_not_null_tb_101_TRUCK_COUNTRY.1267ff037a
+[0m03:55:35.960176 [debug] [Thread-2 (]: Began running node test.tasty_bytes.source_not_null_tb_101_TRUCK_MENU_TYPE_ID.60e97d7181
+[0m03:55:35.960862 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly test.tasty_bytes.source_not_null_tb_101_TRUCK_COUNTRY.1267ff037a, now test.tasty_bytes.source_not_null_tb_101_TRUCK_MENU_TYPE_ID.60e97d7181)
+[0m03:55:35.961405 [debug] [Thread-2 (]: Began compiling node test.tasty_bytes.source_not_null_tb_101_TRUCK_MENU_TYPE_ID.60e97d7181
+[0m03:55:35.968109 [debug] [Thread-2 (]: Writing injected SQL for node "test.tasty_bytes.source_not_null_tb_101_TRUCK_MENU_TYPE_ID.60e97d7181"
+[0m03:55:35.968929 [debug] [Thread-2 (]: Began executing node test.tasty_bytes.source_not_null_tb_101_TRUCK_MENU_TYPE_ID.60e97d7181
+[0m03:55:35.969868 [debug] [Thread-2 (]: Finished running node test.tasty_bytes.source_not_null_tb_101_TRUCK_MENU_TYPE_ID.60e97d7181
+[0m03:55:35.970549 [debug] [Thread-2 (]: Began running node test.tasty_bytes.source_not_null_tb_101_TRUCK_PRIMARY_CITY.729b688979
+[0m03:55:35.971295 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly test.tasty_bytes.source_not_null_tb_101_TRUCK_MENU_TYPE_ID.60e97d7181, now test.tasty_bytes.source_not_null_tb_101_TRUCK_PRIMARY_CITY.729b688979)
+[0m03:55:35.971870 [debug] [Thread-2 (]: Began compiling node test.tasty_bytes.source_not_null_tb_101_TRUCK_PRIMARY_CITY.729b688979
+[0m03:55:35.981987 [debug] [Thread-2 (]: Writing injected SQL for node "test.tasty_bytes.source_not_null_tb_101_TRUCK_PRIMARY_CITY.729b688979"
+[0m03:55:35.982834 [debug] [Thread-2 (]: Began executing node test.tasty_bytes.source_not_null_tb_101_TRUCK_PRIMARY_CITY.729b688979
+[0m03:55:35.983788 [debug] [Thread-2 (]: Finished running node test.tasty_bytes.source_not_null_tb_101_TRUCK_PRIMARY_CITY.729b688979
+[0m03:55:35.984466 [debug] [Thread-2 (]: Began running node test.tasty_bytes.source_not_null_tb_101_TRUCK_TRUCK_ID.99d85f0361
+[0m03:55:35.985215 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly test.tasty_bytes.source_not_null_tb_101_TRUCK_PRIMARY_CITY.729b688979, now test.tasty_bytes.source_not_null_tb_101_TRUCK_TRUCK_ID.99d85f0361)
+[0m03:55:35.985774 [debug] [Thread-2 (]: Began compiling node test.tasty_bytes.source_not_null_tb_101_TRUCK_TRUCK_ID.99d85f0361
+[0m03:55:35.992802 [debug] [Thread-2 (]: Writing injected SQL for node "test.tasty_bytes.source_not_null_tb_101_TRUCK_TRUCK_ID.99d85f0361"
+[0m03:55:35.993597 [debug] [Thread-2 (]: Began executing node test.tasty_bytes.source_not_null_tb_101_TRUCK_TRUCK_ID.99d85f0361
+[0m03:55:35.994578 [debug] [Thread-2 (]: Finished running node test.tasty_bytes.source_not_null_tb_101_TRUCK_TRUCK_ID.99d85f0361
+[0m03:55:35.995264 [debug] [Thread-2 (]: Began running node test.tasty_bytes.source_not_null_tb_101_TRUCK_TRUCK_OPENING_DATE.325cde8d74
+[0m03:55:35.995982 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly test.tasty_bytes.source_not_null_tb_101_TRUCK_TRUCK_ID.99d85f0361, now test.tasty_bytes.source_not_null_tb_101_TRUCK_TRUCK_OPENING_DATE.325cde8d74)
+[0m03:55:35.996541 [debug] [Thread-2 (]: Began compiling node test.tasty_bytes.source_not_null_tb_101_TRUCK_TRUCK_OPENING_DATE.325cde8d74
+[0m03:55:36.003749 [debug] [Thread-2 (]: Writing injected SQL for node "test.tasty_bytes.source_not_null_tb_101_TRUCK_TRUCK_OPENING_DATE.325cde8d74"
+[0m03:55:36.004722 [debug] [Thread-2 (]: Began executing node test.tasty_bytes.source_not_null_tb_101_TRUCK_TRUCK_OPENING_DATE.325cde8d74
+[0m03:55:36.005752 [debug] [Thread-2 (]: Finished running node test.tasty_bytes.source_not_null_tb_101_TRUCK_TRUCK_OPENING_DATE.325cde8d74
+[0m03:55:36.006465 [debug] [Thread-2 (]: Began running node test.tasty_bytes.source_not_null_tb_101_TRUCK_YEAR.523a003f1e
+[0m03:55:36.007199 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly test.tasty_bytes.source_not_null_tb_101_TRUCK_TRUCK_OPENING_DATE.325cde8d74, now test.tasty_bytes.source_not_null_tb_101_TRUCK_YEAR.523a003f1e)
+[0m03:55:36.007762 [debug] [Thread-2 (]: Began compiling node test.tasty_bytes.source_not_null_tb_101_TRUCK_YEAR.523a003f1e
+[0m03:55:36.015075 [debug] [Thread-2 (]: Writing injected SQL for node "test.tasty_bytes.source_not_null_tb_101_TRUCK_YEAR.523a003f1e"
+[0m03:55:36.015930 [debug] [Thread-2 (]: Began executing node test.tasty_bytes.source_not_null_tb_101_TRUCK_YEAR.523a003f1e
+[0m03:55:36.016925 [debug] [Thread-2 (]: Finished running node test.tasty_bytes.source_not_null_tb_101_TRUCK_YEAR.523a003f1e
+[0m03:55:36.017634 [debug] [Thread-2 (]: Began running node test.tasty_bytes.source_relationships_tb_101_ORDER_DETAIL_ORDER_ID__ORDER_ID__source_tb_101_ORDER_HEADER_.69e1cb68b4
+[0m03:55:36.018471 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly test.tasty_bytes.source_not_null_tb_101_TRUCK_YEAR.523a003f1e, now test.tasty_bytes.source_relationships_tb_101_ORDER_DETAIL_ORDER_ID__ORDER_ID__source_tb_101_ORDER_HEADER_.69e1cb68b4)
+[0m03:55:36.019074 [debug] [Thread-2 (]: Began compiling node test.tasty_bytes.source_relationships_tb_101_ORDER_DETAIL_ORDER_ID__ORDER_ID__source_tb_101_ORDER_HEADER_.69e1cb68b4
+[0m03:55:36.030601 [debug] [Thread-2 (]: Writing injected SQL for node "test.tasty_bytes.source_relationships_tb_101_ORDER_DETAIL_ORDER_ID__ORDER_ID__source_tb_101_ORDER_HEADER_.69e1cb68b4"
+[0m03:55:36.031437 [debug] [Thread-2 (]: Began executing node test.tasty_bytes.source_relationships_tb_101_ORDER_DETAIL_ORDER_ID__ORDER_ID__source_tb_101_ORDER_HEADER_.69e1cb68b4
+[0m03:55:36.032420 [debug] [Thread-2 (]: Finished running node test.tasty_bytes.source_relationships_tb_101_ORDER_DETAIL_ORDER_ID__ORDER_ID__source_tb_101_ORDER_HEADER_.69e1cb68b4
+[0m03:55:36.033126 [debug] [Thread-2 (]: Began running node test.tasty_bytes.source_relationships_tb_101_ORDER_HEADER_LOCATION_ID__LOCATION_ID__source_tb_101_LOCATION_.0dfde68927
+[0m03:55:36.033882 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly test.tasty_bytes.source_relationships_tb_101_ORDER_DETAIL_ORDER_ID__ORDER_ID__source_tb_101_ORDER_HEADER_.69e1cb68b4, now test.tasty_bytes.source_relationships_tb_101_ORDER_HEADER_LOCATION_ID__LOCATION_ID__source_tb_101_LOCATION_.0dfde68927)
+[0m03:55:36.034486 [debug] [Thread-2 (]: Began compiling node test.tasty_bytes.source_relationships_tb_101_ORDER_HEADER_LOCATION_ID__LOCATION_ID__source_tb_101_LOCATION_.0dfde68927
+[0m03:55:36.042947 [debug] [Thread-2 (]: Writing injected SQL for node "test.tasty_bytes.source_relationships_tb_101_ORDER_HEADER_LOCATION_ID__LOCATION_ID__source_tb_101_LOCATION_.0dfde68927"
+[0m03:55:36.043784 [debug] [Thread-2 (]: Began executing node test.tasty_bytes.source_relationships_tb_101_ORDER_HEADER_LOCATION_ID__LOCATION_ID__source_tb_101_LOCATION_.0dfde68927
+[0m03:55:36.044775 [debug] [Thread-2 (]: Finished running node test.tasty_bytes.source_relationships_tb_101_ORDER_HEADER_LOCATION_ID__LOCATION_ID__source_tb_101_LOCATION_.0dfde68927
+[0m03:55:36.045465 [debug] [Thread-2 (]: Began running node test.tasty_bytes.source_relationships_tb_101_ORDER_HEADER_TRUCK_ID__TRUCK_ID__source_tb_101_TRUCK_.b808016767
+[0m03:55:36.046257 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly test.tasty_bytes.source_relationships_tb_101_ORDER_HEADER_LOCATION_ID__LOCATION_ID__source_tb_101_LOCATION_.0dfde68927, now test.tasty_bytes.source_relationships_tb_101_ORDER_HEADER_TRUCK_ID__TRUCK_ID__source_tb_101_TRUCK_.b808016767)
+[0m03:55:36.047163 [debug] [Thread-2 (]: Began compiling node test.tasty_bytes.source_relationships_tb_101_ORDER_HEADER_TRUCK_ID__TRUCK_ID__source_tb_101_TRUCK_.b808016767
+[0m03:55:36.055491 [debug] [Thread-2 (]: Writing injected SQL for node "test.tasty_bytes.source_relationships_tb_101_ORDER_HEADER_TRUCK_ID__TRUCK_ID__source_tb_101_TRUCK_.b808016767"
+[0m03:55:36.056297 [debug] [Thread-2 (]: Began executing node test.tasty_bytes.source_relationships_tb_101_ORDER_HEADER_TRUCK_ID__TRUCK_ID__source_tb_101_TRUCK_.b808016767
+[0m03:55:36.057269 [debug] [Thread-2 (]: Finished running node test.tasty_bytes.source_relationships_tb_101_ORDER_HEADER_TRUCK_ID__TRUCK_ID__source_tb_101_TRUCK_.b808016767
+[0m03:55:36.057963 [debug] [Thread-2 (]: Began running node test.tasty_bytes.source_relationships_tb_101_TRUCK_FRANCHISE_ID__FRANCHISE_ID__source_tb_101_FRANCHISE_.6f47b4eb9b
+[0m03:55:36.058753 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly test.tasty_bytes.source_relationships_tb_101_ORDER_HEADER_TRUCK_ID__TRUCK_ID__source_tb_101_TRUCK_.b808016767, now test.tasty_bytes.source_relationships_tb_101_TRUCK_FRANCHISE_ID__FRANCHISE_ID__source_tb_101_FRANCHISE_.6f47b4eb9b)
+[0m03:55:36.059326 [debug] [Thread-2 (]: Began compiling node test.tasty_bytes.source_relationships_tb_101_TRUCK_FRANCHISE_ID__FRANCHISE_ID__source_tb_101_FRANCHISE_.6f47b4eb9b
+[0m03:55:36.067920 [debug] [Thread-2 (]: Writing injected SQL for node "test.tasty_bytes.source_relationships_tb_101_TRUCK_FRANCHISE_ID__FRANCHISE_ID__source_tb_101_FRANCHISE_.6f47b4eb9b"
+[0m03:55:36.068780 [debug] [Thread-2 (]: Began executing node test.tasty_bytes.source_relationships_tb_101_TRUCK_FRANCHISE_ID__FRANCHISE_ID__source_tb_101_FRANCHISE_.6f47b4eb9b
+[0m03:55:36.069747 [debug] [Thread-2 (]: Finished running node test.tasty_bytes.source_relationships_tb_101_TRUCK_FRANCHISE_ID__FRANCHISE_ID__source_tb_101_FRANCHISE_.6f47b4eb9b
+[0m03:55:36.070463 [debug] [Thread-2 (]: Began running node test.tasty_bytes.source_unique_tb_101_LOCATION_LOCATION_ID.a3adc0821c
+[0m03:55:36.071188 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly test.tasty_bytes.source_relationships_tb_101_TRUCK_FRANCHISE_ID__FRANCHISE_ID__source_tb_101_FRANCHISE_.6f47b4eb9b, now test.tasty_bytes.source_unique_tb_101_LOCATION_LOCATION_ID.a3adc0821c)
+[0m03:55:36.071751 [debug] [Thread-2 (]: Began compiling node test.tasty_bytes.source_unique_tb_101_LOCATION_LOCATION_ID.a3adc0821c
+[0m03:55:36.081709 [debug] [Thread-2 (]: Writing injected SQL for node "test.tasty_bytes.source_unique_tb_101_LOCATION_LOCATION_ID.a3adc0821c"
+[0m03:55:36.082549 [debug] [Thread-2 (]: Began executing node test.tasty_bytes.source_unique_tb_101_LOCATION_LOCATION_ID.a3adc0821c
+[0m03:55:36.083512 [debug] [Thread-2 (]: Finished running node test.tasty_bytes.source_unique_tb_101_LOCATION_LOCATION_ID.a3adc0821c
+[0m03:55:36.084186 [debug] [Thread-2 (]: Began running node test.tasty_bytes.source_unique_tb_101_LOCATION_PLACEKEY.d954d017f0
+[0m03:55:36.084907 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly test.tasty_bytes.source_unique_tb_101_LOCATION_LOCATION_ID.a3adc0821c, now test.tasty_bytes.source_unique_tb_101_LOCATION_PLACEKEY.d954d017f0)
+[0m03:55:36.085468 [debug] [Thread-2 (]: Began compiling node test.tasty_bytes.source_unique_tb_101_LOCATION_PLACEKEY.d954d017f0
+[0m03:55:36.095253 [debug] [Thread-2 (]: Writing injected SQL for node "test.tasty_bytes.source_unique_tb_101_LOCATION_PLACEKEY.d954d017f0"
+[0m03:55:36.096063 [debug] [Thread-2 (]: Began executing node test.tasty_bytes.source_unique_tb_101_LOCATION_PLACEKEY.d954d017f0
+[0m03:55:36.097012 [debug] [Thread-2 (]: Finished running node test.tasty_bytes.source_unique_tb_101_LOCATION_PLACEKEY.d954d017f0
+[0m03:55:36.097697 [debug] [Thread-2 (]: Began running node test.tasty_bytes.source_unique_tb_101_MENU_MENU_ID.2aa1dd0884
+[0m03:55:36.098488 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly test.tasty_bytes.source_unique_tb_101_LOCATION_PLACEKEY.d954d017f0, now test.tasty_bytes.source_unique_tb_101_MENU_MENU_ID.2aa1dd0884)
+[0m03:55:36.099049 [debug] [Thread-2 (]: Began compiling node test.tasty_bytes.source_unique_tb_101_MENU_MENU_ID.2aa1dd0884
+[0m03:55:36.105944 [debug] [Thread-2 (]: Writing injected SQL for node "test.tasty_bytes.source_unique_tb_101_MENU_MENU_ID.2aa1dd0884"
+[0m03:55:36.106780 [debug] [Thread-2 (]: Began executing node test.tasty_bytes.source_unique_tb_101_MENU_MENU_ID.2aa1dd0884
+[0m03:55:36.107738 [debug] [Thread-2 (]: Finished running node test.tasty_bytes.source_unique_tb_101_MENU_MENU_ID.2aa1dd0884
+[0m03:55:36.108436 [debug] [Thread-2 (]: Began running node test.tasty_bytes.source_unique_tb_101_TRUCK_TRUCK_ID.816c3dd352
+[0m03:55:36.109152 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly test.tasty_bytes.source_unique_tb_101_MENU_MENU_ID.2aa1dd0884, now test.tasty_bytes.source_unique_tb_101_TRUCK_TRUCK_ID.816c3dd352)
+[0m03:55:36.109697 [debug] [Thread-2 (]: Began compiling node test.tasty_bytes.source_unique_tb_101_TRUCK_TRUCK_ID.816c3dd352
+[0m03:55:36.116902 [debug] [Thread-2 (]: Writing injected SQL for node "test.tasty_bytes.source_unique_tb_101_TRUCK_TRUCK_ID.816c3dd352"
+[0m03:55:36.117730 [debug] [Thread-2 (]: Began executing node test.tasty_bytes.source_unique_tb_101_TRUCK_TRUCK_ID.816c3dd352
+[0m03:55:36.118712 [debug] [Thread-2 (]: Finished running node test.tasty_bytes.source_unique_tb_101_TRUCK_TRUCK_ID.816c3dd352
+[0m03:55:36.119430 [debug] [Thread-2 (]: Began running node model.tasty_bytes.customer_loyalty_metrics
+[0m03:55:36.120167 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly test.tasty_bytes.source_unique_tb_101_TRUCK_TRUCK_ID.816c3dd352, now model.tasty_bytes.customer_loyalty_metrics)
+[0m03:55:36.120735 [debug] [Thread-2 (]: Began compiling node model.tasty_bytes.customer_loyalty_metrics
+[0m03:55:36.126436 [debug] [Thread-2 (]: Writing injected SQL for node "model.tasty_bytes.customer_loyalty_metrics"
+[0m03:55:36.127361 [debug] [Thread-2 (]: Began executing node model.tasty_bytes.customer_loyalty_metrics
+[0m03:55:36.128382 [debug] [Thread-2 (]: Finished running node model.tasty_bytes.customer_loyalty_metrics
+[0m03:55:36.129070 [debug] [Thread-2 (]: Began running node model.tasty_bytes.orders
+[0m03:55:36.129805 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly model.tasty_bytes.customer_loyalty_metrics, now model.tasty_bytes.orders)
+[0m03:55:36.130377 [debug] [Thread-2 (]: Began compiling node model.tasty_bytes.orders
+[0m03:55:36.137824 [debug] [Thread-2 (]: Writing injected SQL for node "model.tasty_bytes.orders"
+[0m03:55:36.138717 [debug] [Thread-2 (]: Began executing node model.tasty_bytes.orders
+[0m03:55:36.139693 [debug] [Thread-2 (]: Finished running node model.tasty_bytes.orders
+[0m03:55:36.140373 [debug] [Thread-2 (]: Began running node model.tasty_bytes.sales_metrics_by_location
+[0m03:55:36.141070 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly model.tasty_bytes.orders, now model.tasty_bytes.sales_metrics_by_location)
+[0m03:55:36.141614 [debug] [Thread-2 (]: Began compiling node model.tasty_bytes.sales_metrics_by_location
+[0m03:55:36.176939 [debug] [Thread-2 (]: Writing injected SQL for node "model.tasty_bytes.sales_metrics_by_location"
+[0m03:55:36.177889 [debug] [Thread-2 (]: Began executing node model.tasty_bytes.sales_metrics_by_location
+[0m03:55:36.178948 [debug] [Thread-2 (]: Finished running node model.tasty_bytes.sales_metrics_by_location
+[0m03:55:36.181951 [debug] [Dummy-1   ]: Connection 'master' was properly closed.
+[0m03:55:36.182624 [debug] [Dummy-1   ]: Connection 'model.tasty_bytes.sales_metrics_by_location' was properly closed.
+[0m03:55:36.192874 [debug] [Dummy-1   ]: Command end result
+[0m03:55:36.240367 [debug] [Dummy-1   ]: Wrote artifact WritableManifest to /tmp/dbt/target/manifest.json
+[0m03:55:36.243459 [debug] [Dummy-1   ]: Wrote artifact SemanticManifest to /tmp/dbt/target/semantic_manifest.json
+[0m03:55:36.255536 [debug] [Dummy-1   ]: Wrote artifact RunExecutionResult to /tmp/dbt/target/run_results.json
+[0m03:55:36.257748 [debug] [Dummy-1   ]: Resource report: {"command_name": "compile", "command_success": true, "command_wall_clock_time": 5.105044, "process_in_blocks": "0", "process_kernel_time": 1.25, "process_mem_max_rss": "497744", "process_out_blocks": "0", "process_user_time": 7.48}
+[0m03:55:36.258570 [debug] [Dummy-1   ]: Command `cli compile` succeeded at 03:55:36.258216 after 5.11 seconds
+[0m03:55:36.259176 [debug] [Dummy-1   ]: Flushing usage events
+
+
+============================== 04:01:29.444050 | 61c57c8e-3d2e-4b45-96f2-55100f1449d2 ==============================
+[0m04:01:29.444050 [info ] [Dummy-1   ]: Running with dbt=1.9.4
+[0m04:01:29.445125 [debug] [Dummy-1   ]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'version_check': 'True', 'fail_fast': 'False', 'log_path': '/tmp/dbt/logs', 'debug': 'False', 'profiles_dir': '/tmp/dbt/', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'empty': 'False', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'invocation_command': 'dbt ', 'introspect': 'True', 'static_parser': 'True', 'target_path': '/tmp/dbt/target/', 'log_format': 'default', 'send_anonymous_usage_stats': 'False'}
+[0m04:01:29.804178 [info ] [Dummy-1   ]: Registered adapter: snowflake=1.9.2
+[0m04:01:30.541671 [debug] [Dummy-1   ]: checksum: 53ed91fada2233efb98368d1716b44ab532c83a9c293cf1890b7905d5b45fb25, vars: {}, profile: , target: dev, version: 1.9.4
+[0m04:01:30.932761 [debug] [Dummy-1   ]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m04:01:30.933508 [debug] [Dummy-1   ]: Partial parsing enabled, no changes found, skipping parsing
+[0m04:01:31.144098 [debug] [Dummy-1   ]: Wrote artifact WritableManifest to /tmp/dbt/target/manifest.json
+[0m04:01:31.147038 [debug] [Dummy-1   ]: Wrote artifact SemanticManifest to /tmp/dbt/target/semantic_manifest.json
+[0m04:01:31.208393 [info ] [Dummy-1   ]: Found 11 models, 50 data tests, 8 sources, 476 macros
+[0m04:01:31.212658 [info ] [Dummy-1   ]: 
+[0m04:01:31.213467 [info ] [Dummy-1   ]: Concurrency: 1 threads (target='dev')
+[0m04:01:31.213985 [info ] [Dummy-1   ]: 
+[0m04:01:31.214922 [debug] [Dummy-1   ]: Acquiring new snowflake connection 'master'
+[0m04:01:31.222924 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_tasty_bytes_dbt_db'
+[0m04:01:31.386896 [debug] [ThreadPool]: Using snowflake connection "list_tasty_bytes_dbt_db"
+[0m04:01:31.387566 [debug] [ThreadPool]: On list_tasty_bytes_dbt_db: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "tasty_bytes", "target_name": "dev", "connection_name": "list_tasty_bytes_dbt_db"} */
+show terse schemas in database tasty_bytes_dbt_db
+    limit 10000
+[0m04:01:31.388101 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m04:01:32.087845 [debug] [ThreadPool]: SQL status: SUCCESS 6 in 0.700 seconds
+[0m04:01:32.093277 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_tasty_bytes_dbt_db_dev'
+[0m04:01:32.110566 [debug] [ThreadPool]: Using snowflake connection "list_tasty_bytes_dbt_db_dev"
+[0m04:01:32.111449 [debug] [ThreadPool]: On list_tasty_bytes_dbt_db_dev: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "tasty_bytes", "target_name": "dev", "connection_name": "list_tasty_bytes_dbt_db_dev"} */
+alter session set quoted_identifiers_ignore_case = false;
+[0m04:01:32.112020 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m04:01:32.587585 [debug] [ThreadPool]: SQL status: SUCCESS 1 in 0.475 seconds
+[0m04:01:32.593407 [debug] [ThreadPool]: Using snowflake connection "list_tasty_bytes_dbt_db_dev"
+[0m04:01:32.594089 [debug] [ThreadPool]: On list_tasty_bytes_dbt_db_dev: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "tasty_bytes", "target_name": "dev", "connection_name": "list_tasty_bytes_dbt_db_dev"} */
+show objects in tasty_bytes_dbt_db.dev
+    limit 10000
+    
+;
+[0m04:01:32.640881 [debug] [ThreadPool]: SQL status: SUCCESS 0 in 0.046 seconds
+[0m04:01:32.643241 [debug] [ThreadPool]: Using snowflake connection "list_tasty_bytes_dbt_db_dev"
+[0m04:01:32.643841 [debug] [ThreadPool]: On list_tasty_bytes_dbt_db_dev: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "tasty_bytes", "target_name": "dev", "connection_name": "list_tasty_bytes_dbt_db_dev"} */
+alter session unset quoted_identifiers_ignore_case;
+[0m04:01:32.701313 [debug] [ThreadPool]: SQL status: SUCCESS 1 in 0.057 seconds
+[0m04:01:32.708559 [debug] [Thread-2 (]: Began running node model.tasty_bytes.raw_customer_customer_loyalty
+[0m04:01:32.709526 [info ] [Thread-2 (]: 1 of 11 START sql view model dev.raw_customer_customer_loyalty ................. [RUN]
+[0m04:01:32.710348 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly list_tasty_bytes_dbt_db_dev, now model.tasty_bytes.raw_customer_customer_loyalty)
+[0m04:01:32.710982 [debug] [Thread-2 (]: Began compiling node model.tasty_bytes.raw_customer_customer_loyalty
+[0m04:01:32.722818 [debug] [Thread-2 (]: Writing injected SQL for node "model.tasty_bytes.raw_customer_customer_loyalty"
+[0m04:01:32.723764 [debug] [Thread-2 (]: Began executing node model.tasty_bytes.raw_customer_customer_loyalty
+[0m04:01:32.797436 [debug] [Thread-2 (]: Writing runtime sql for node "model.tasty_bytes.raw_customer_customer_loyalty"
+[0m04:01:32.799130 [debug] [Thread-2 (]: Using snowflake connection "model.tasty_bytes.raw_customer_customer_loyalty"
+[0m04:01:32.799834 [debug] [Thread-2 (]: On model.tasty_bytes.raw_customer_customer_loyalty: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "tasty_bytes", "target_name": "dev", "node_id": "model.tasty_bytes.raw_customer_customer_loyalty"} */
+create or replace   view tasty_bytes_dbt_db.dev.raw_customer_customer_loyalty
+  
+   as (
+    select *
+from tasty_bytes_dbt_db.RAW.CUSTOMER_LOYALTY
+  );
+[0m04:01:32.800494 [debug] [Thread-2 (]: Opening a new connection, currently in state init
+[0m04:01:33.384909 [debug] [Thread-2 (]: SQL status: SUCCESS 1 in 0.584 seconds
+[0m04:01:33.416591 [info ] [Thread-2 (]: 1 of 11 OK created sql view model dev.raw_customer_customer_loyalty ............ [[32mSUCCESS 1[0m in 0.70s]
+[0m04:01:33.417615 [debug] [Thread-2 (]: Finished running node model.tasty_bytes.raw_customer_customer_loyalty
+[0m04:01:33.418437 [debug] [Thread-2 (]: Began running node model.tasty_bytes.raw_pos_country
+[0m04:01:33.419395 [info ] [Thread-2 (]: 2 of 11 START sql view model dev.raw_pos_country ............................... [RUN]
+[0m04:01:33.420140 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly model.tasty_bytes.raw_customer_customer_loyalty, now model.tasty_bytes.raw_pos_country)
+[0m04:01:33.420700 [debug] [Thread-2 (]: Began compiling node model.tasty_bytes.raw_pos_country
+[0m04:01:33.426462 [debug] [Thread-2 (]: Writing injected SQL for node "model.tasty_bytes.raw_pos_country"
+[0m04:01:33.427338 [debug] [Thread-2 (]: Began executing node model.tasty_bytes.raw_pos_country
+[0m04:01:33.433138 [debug] [Thread-2 (]: Writing runtime sql for node "model.tasty_bytes.raw_pos_country"
+[0m04:01:33.434475 [debug] [Thread-2 (]: Using snowflake connection "model.tasty_bytes.raw_pos_country"
+[0m04:01:33.435138 [debug] [Thread-2 (]: On model.tasty_bytes.raw_pos_country: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "tasty_bytes", "target_name": "dev", "node_id": "model.tasty_bytes.raw_pos_country"} */
+create or replace   view tasty_bytes_dbt_db.dev.raw_pos_country
+  
+   as (
+    SELECT *
+FROM tasty_bytes_dbt_db.RAW.COUNTRY
+  );
+[0m04:01:33.435719 [debug] [Thread-2 (]: Opening a new connection, currently in state init
+[0m04:01:34.033192 [debug] [Thread-2 (]: SQL status: SUCCESS 1 in 0.597 seconds
+[0m04:01:34.036684 [info ] [Thread-2 (]: 2 of 11 OK created sql view model dev.raw_pos_country .......................... [[32mSUCCESS 1[0m in 0.62s]
+[0m04:01:34.037719 [debug] [Thread-2 (]: Finished running node model.tasty_bytes.raw_pos_country
+[0m04:01:34.038538 [debug] [Thread-2 (]: Began running node model.tasty_bytes.raw_pos_franchise
+[0m04:01:34.039415 [info ] [Thread-2 (]: 3 of 11 START sql view model dev.raw_pos_franchise ............................. [RUN]
+[0m04:01:34.040170 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly model.tasty_bytes.raw_pos_country, now model.tasty_bytes.raw_pos_franchise)
+[0m04:01:34.040773 [debug] [Thread-2 (]: Began compiling node model.tasty_bytes.raw_pos_franchise
+[0m04:01:34.046511 [debug] [Thread-2 (]: Writing injected SQL for node "model.tasty_bytes.raw_pos_franchise"
+[0m04:01:34.047519 [debug] [Thread-2 (]: Began executing node model.tasty_bytes.raw_pos_franchise
+[0m04:01:34.055309 [debug] [Thread-2 (]: Writing runtime sql for node "model.tasty_bytes.raw_pos_franchise"
+[0m04:01:34.056563 [debug] [Thread-2 (]: Using snowflake connection "model.tasty_bytes.raw_pos_franchise"
+[0m04:01:34.057286 [debug] [Thread-2 (]: On model.tasty_bytes.raw_pos_franchise: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "tasty_bytes", "target_name": "dev", "node_id": "model.tasty_bytes.raw_pos_franchise"} */
+create or replace   view tasty_bytes_dbt_db.dev.raw_pos_franchise
+  
+   as (
+    SELECT *
+FROM tasty_bytes_dbt_db.RAW.FRANCHISE
+  );
+[0m04:01:34.057874 [debug] [Thread-2 (]: Opening a new connection, currently in state init
+[0m04:01:34.622990 [debug] [Thread-2 (]: SQL status: SUCCESS 1 in 0.565 seconds
+[0m04:01:34.626488 [info ] [Thread-2 (]: 3 of 11 OK created sql view model dev.raw_pos_franchise ........................ [[32mSUCCESS 1[0m in 0.59s]
+[0m04:01:34.627445 [debug] [Thread-2 (]: Finished running node model.tasty_bytes.raw_pos_franchise
+[0m04:01:34.628151 [debug] [Thread-2 (]: Began running node model.tasty_bytes.raw_pos_location
+[0m04:01:34.629189 [info ] [Thread-2 (]: 4 of 11 START sql view model dev.raw_pos_location .............................. [RUN]
+[0m04:01:34.629885 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly model.tasty_bytes.raw_pos_franchise, now model.tasty_bytes.raw_pos_location)
+[0m04:01:34.630461 [debug] [Thread-2 (]: Began compiling node model.tasty_bytes.raw_pos_location
+[0m04:01:34.636396 [debug] [Thread-2 (]: Writing injected SQL for node "model.tasty_bytes.raw_pos_location"
+[0m04:01:34.637252 [debug] [Thread-2 (]: Began executing node model.tasty_bytes.raw_pos_location
+[0m04:01:34.642507 [debug] [Thread-2 (]: Writing runtime sql for node "model.tasty_bytes.raw_pos_location"
+[0m04:01:34.643703 [debug] [Thread-2 (]: Using snowflake connection "model.tasty_bytes.raw_pos_location"
+[0m04:01:34.644292 [debug] [Thread-2 (]: On model.tasty_bytes.raw_pos_location: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "tasty_bytes", "target_name": "dev", "node_id": "model.tasty_bytes.raw_pos_location"} */
+create or replace   view tasty_bytes_dbt_db.dev.raw_pos_location
+  
+   as (
+    SELECT *
+FROM tasty_bytes_dbt_db.RAW.LOCATION
+  );
+[0m04:01:34.644839 [debug] [Thread-2 (]: Opening a new connection, currently in state init
+[0m04:01:35.248048 [debug] [Thread-2 (]: SQL status: SUCCESS 1 in 0.603 seconds
+[0m04:01:35.251627 [info ] [Thread-2 (]: 4 of 11 OK created sql view model dev.raw_pos_location ......................... [[32mSUCCESS 1[0m in 0.62s]
+[0m04:01:35.252556 [debug] [Thread-2 (]: Finished running node model.tasty_bytes.raw_pos_location
+[0m04:01:35.253262 [debug] [Thread-2 (]: Began running node model.tasty_bytes.raw_pos_menu
+[0m04:01:35.254120 [info ] [Thread-2 (]: 5 of 11 START sql view model dev.raw_pos_menu .................................. [RUN]
+[0m04:01:35.254852 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly model.tasty_bytes.raw_pos_location, now model.tasty_bytes.raw_pos_menu)
+[0m04:01:35.255410 [debug] [Thread-2 (]: Began compiling node model.tasty_bytes.raw_pos_menu
+[0m04:01:35.261113 [debug] [Thread-2 (]: Writing injected SQL for node "model.tasty_bytes.raw_pos_menu"
+[0m04:01:35.261934 [debug] [Thread-2 (]: Began executing node model.tasty_bytes.raw_pos_menu
+[0m04:01:35.269440 [debug] [Thread-2 (]: Writing runtime sql for node "model.tasty_bytes.raw_pos_menu"
+[0m04:01:35.270561 [debug] [Thread-2 (]: Using snowflake connection "model.tasty_bytes.raw_pos_menu"
+[0m04:01:35.271154 [debug] [Thread-2 (]: On model.tasty_bytes.raw_pos_menu: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "tasty_bytes", "target_name": "dev", "node_id": "model.tasty_bytes.raw_pos_menu"} */
+create or replace   view tasty_bytes_dbt_db.dev.raw_pos_menu
+  
+   as (
+    SELECT *
+FROM tasty_bytes_dbt_db.RAW.MENU
+  );
+[0m04:01:35.271691 [debug] [Thread-2 (]: Opening a new connection, currently in state init
+[0m04:01:35.809377 [debug] [Thread-2 (]: SQL status: SUCCESS 1 in 0.537 seconds
+[0m04:01:35.813279 [info ] [Thread-2 (]: 5 of 11 OK created sql view model dev.raw_pos_menu ............................. [[32mSUCCESS 1[0m in 0.56s]
+[0m04:01:35.814244 [debug] [Thread-2 (]: Finished running node model.tasty_bytes.raw_pos_menu
+[0m04:01:35.814962 [debug] [Thread-2 (]: Began running node model.tasty_bytes.raw_pos_order_detail
+[0m04:01:35.815836 [info ] [Thread-2 (]: 6 of 11 START sql view model dev.raw_pos_order_detail .......................... [RUN]
+[0m04:01:35.816533 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly model.tasty_bytes.raw_pos_menu, now model.tasty_bytes.raw_pos_order_detail)
+[0m04:01:35.817095 [debug] [Thread-2 (]: Began compiling node model.tasty_bytes.raw_pos_order_detail
+[0m04:01:35.822785 [debug] [Thread-2 (]: Writing injected SQL for node "model.tasty_bytes.raw_pos_order_detail"
+[0m04:01:35.823661 [debug] [Thread-2 (]: Began executing node model.tasty_bytes.raw_pos_order_detail
+[0m04:01:35.829239 [debug] [Thread-2 (]: Writing runtime sql for node "model.tasty_bytes.raw_pos_order_detail"
+[0m04:01:35.830453 [debug] [Thread-2 (]: Using snowflake connection "model.tasty_bytes.raw_pos_order_detail"
+[0m04:01:35.831059 [debug] [Thread-2 (]: On model.tasty_bytes.raw_pos_order_detail: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "tasty_bytes", "target_name": "dev", "node_id": "model.tasty_bytes.raw_pos_order_detail"} */
+create or replace   view tasty_bytes_dbt_db.dev.raw_pos_order_detail
+  
+   as (
+    SELECT *
+FROM tasty_bytes_dbt_db.RAW.ORDER_DETAIL
+  );
+[0m04:01:35.831603 [debug] [Thread-2 (]: Opening a new connection, currently in state init
+[0m04:01:36.377283 [debug] [Thread-2 (]: SQL status: SUCCESS 1 in 0.545 seconds
+[0m04:01:36.380783 [info ] [Thread-2 (]: 6 of 11 OK created sql view model dev.raw_pos_order_detail ..................... [[32mSUCCESS 1[0m in 0.56s]
+[0m04:01:36.381724 [debug] [Thread-2 (]: Finished running node model.tasty_bytes.raw_pos_order_detail
+[0m04:01:36.382431 [debug] [Thread-2 (]: Began running node model.tasty_bytes.raw_pos_order_header
+[0m04:01:36.383267 [info ] [Thread-2 (]: 7 of 11 START sql view model dev.raw_pos_order_header .......................... [RUN]
+[0m04:01:36.383946 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly model.tasty_bytes.raw_pos_order_detail, now model.tasty_bytes.raw_pos_order_header)
+[0m04:01:36.384490 [debug] [Thread-2 (]: Began compiling node model.tasty_bytes.raw_pos_order_header
+[0m04:01:36.390558 [debug] [Thread-2 (]: Writing injected SQL for node "model.tasty_bytes.raw_pos_order_header"
+[0m04:01:36.391424 [debug] [Thread-2 (]: Began executing node model.tasty_bytes.raw_pos_order_header
+[0m04:01:36.398931 [debug] [Thread-2 (]: Writing runtime sql for node "model.tasty_bytes.raw_pos_order_header"
+[0m04:01:36.400175 [debug] [Thread-2 (]: Using snowflake connection "model.tasty_bytes.raw_pos_order_header"
+[0m04:01:36.400790 [debug] [Thread-2 (]: On model.tasty_bytes.raw_pos_order_header: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "tasty_bytes", "target_name": "dev", "node_id": "model.tasty_bytes.raw_pos_order_header"} */
+create or replace   view tasty_bytes_dbt_db.dev.raw_pos_order_header
+  
+   as (
+    SELECT *
+FROM tasty_bytes_dbt_db.RAW.ORDER_HEADER
+  );
+[0m04:01:36.401334 [debug] [Thread-2 (]: Opening a new connection, currently in state init
+[0m04:01:36.938072 [debug] [Thread-2 (]: SQL status: SUCCESS 1 in 0.536 seconds
+[0m04:01:36.941527 [info ] [Thread-2 (]: 7 of 11 OK created sql view model dev.raw_pos_order_header ..................... [[32mSUCCESS 1[0m in 0.56s]
+[0m04:01:36.942471 [debug] [Thread-2 (]: Finished running node model.tasty_bytes.raw_pos_order_header
+[0m04:01:36.943333 [debug] [Thread-2 (]: Began running node model.tasty_bytes.raw_pos_truck
+[0m04:01:36.944494 [info ] [Thread-2 (]: 8 of 11 START sql view model dev.raw_pos_truck ................................. [RUN]
+[0m04:01:36.945224 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly model.tasty_bytes.raw_pos_order_header, now model.tasty_bytes.raw_pos_truck)
+[0m04:01:36.945783 [debug] [Thread-2 (]: Began compiling node model.tasty_bytes.raw_pos_truck
+[0m04:01:36.951689 [debug] [Thread-2 (]: Writing injected SQL for node "model.tasty_bytes.raw_pos_truck"
+[0m04:01:36.952573 [debug] [Thread-2 (]: Began executing node model.tasty_bytes.raw_pos_truck
+[0m04:01:36.958243 [debug] [Thread-2 (]: Writing runtime sql for node "model.tasty_bytes.raw_pos_truck"
+[0m04:01:36.959507 [debug] [Thread-2 (]: Using snowflake connection "model.tasty_bytes.raw_pos_truck"
+[0m04:01:36.960103 [debug] [Thread-2 (]: On model.tasty_bytes.raw_pos_truck: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "tasty_bytes", "target_name": "dev", "node_id": "model.tasty_bytes.raw_pos_truck"} */
+create or replace   view tasty_bytes_dbt_db.dev.raw_pos_truck
+  
+   as (
+    SELECT *
+FROM tasty_bytes_dbt_db.RAW.TRUCK
+  );
+[0m04:01:36.960649 [debug] [Thread-2 (]: Opening a new connection, currently in state init
+[0m04:01:37.453015 [debug] [Thread-2 (]: SQL status: SUCCESS 1 in 0.492 seconds
+[0m04:01:37.456744 [info ] [Thread-2 (]: 8 of 11 OK created sql view model dev.raw_pos_truck ............................ [[32mSUCCESS 1[0m in 0.51s]
+[0m04:01:37.457676 [debug] [Thread-2 (]: Finished running node model.tasty_bytes.raw_pos_truck
+[0m04:01:37.458495 [debug] [Thread-2 (]: Began running node model.tasty_bytes.customer_loyalty_metrics
+[0m04:01:37.459768 [info ] [Thread-2 (]: 9 of 11 START sql table model dev.customer_loyalty_metrics ..................... [RUN]
+[0m04:01:37.460519 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly model.tasty_bytes.raw_pos_truck, now model.tasty_bytes.customer_loyalty_metrics)
+[0m04:01:37.461091 [debug] [Thread-2 (]: Began compiling node model.tasty_bytes.customer_loyalty_metrics
+[0m04:01:37.467133 [debug] [Thread-2 (]: Writing injected SQL for node "model.tasty_bytes.customer_loyalty_metrics"
+[0m04:01:37.468011 [debug] [Thread-2 (]: Began executing node model.tasty_bytes.customer_loyalty_metrics
+[0m04:01:37.504834 [debug] [Thread-2 (]: Writing runtime sql for node "model.tasty_bytes.customer_loyalty_metrics"
+[0m04:01:37.506879 [debug] [Thread-2 (]: Using snowflake connection "model.tasty_bytes.customer_loyalty_metrics"
+[0m04:01:37.507577 [debug] [Thread-2 (]: On model.tasty_bytes.customer_loyalty_metrics: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "tasty_bytes", "target_name": "dev", "node_id": "model.tasty_bytes.customer_loyalty_metrics"} */
+create or replace transient table tasty_bytes_dbt_db.dev.customer_loyalty_metrics
+         as
+        (SELECT 
+    cl.customer_id,
+    cl.city,
+    cl.country,
+    cl.first_name,
+    cl.last_name,
+    cl.phone_number,
+    cl.e_mail,
+    SUM(oh.order_total) AS total_sales,
+    ARRAY_AGG(DISTINCT oh.location_id) AS visited_location_ids_array
+FROM tasty_bytes_dbt_db.dev.raw_customer_customer_loyalty cl
+JOIN tasty_bytes_dbt_db.dev.raw_pos_order_header oh
+ON cl.customer_id = oh.customer_id
+GROUP BY cl.customer_id, cl.city, cl.country, cl.first_name,
+cl.last_name, cl.phone_number, cl.e_mail
+        );
+[0m04:01:37.508164 [debug] [Thread-2 (]: Opening a new connection, currently in state init
+[0m04:01:52.488080 [debug] [Thread-2 (]: SQL status: SUCCESS 1 in 14.980 seconds
+[0m04:01:52.491450 [info ] [Thread-2 (]: 9 of 11 OK created sql table model dev.customer_loyalty_metrics ................ [[32mSUCCESS 1[0m in 15.03s]
+[0m04:01:52.492368 [debug] [Thread-2 (]: Finished running node model.tasty_bytes.customer_loyalty_metrics
+[0m04:01:52.493061 [debug] [Thread-2 (]: Began running node model.tasty_bytes.orders
+[0m04:01:52.493873 [info ] [Thread-2 (]: 10 of 11 START sql table model dev.orders ...................................... [RUN]
+[0m04:01:52.494572 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly model.tasty_bytes.customer_loyalty_metrics, now model.tasty_bytes.orders)
+[0m04:01:52.495131 [debug] [Thread-2 (]: Began compiling node model.tasty_bytes.orders
+[0m04:01:52.502762 [debug] [Thread-2 (]: Writing injected SQL for node "model.tasty_bytes.orders"
+[0m04:01:52.503589 [debug] [Thread-2 (]: Began executing node model.tasty_bytes.orders
+[0m04:01:52.509058 [debug] [Thread-2 (]: Writing runtime sql for node "model.tasty_bytes.orders"
+[0m04:01:52.511941 [debug] [Thread-2 (]: Using snowflake connection "model.tasty_bytes.orders"
+[0m04:01:52.512691 [debug] [Thread-2 (]: On model.tasty_bytes.orders: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "tasty_bytes", "target_name": "dev", "node_id": "model.tasty_bytes.orders"} */
+create or replace transient table tasty_bytes_dbt_db.dev.orders
+         as
+        (SELECT 
+    oh.order_id,
+    oh.truck_id,
+    oh.order_ts,
+    od.order_detail_id,
+    od.line_number,
+    m.truck_brand_name,
+    m.menu_type,
+    t.primary_city,
+    t.region,
+    t.country,
+    t.franchise_flag,
+    t.franchise_id,
+    f.first_name AS franchisee_first_name,
+    f.last_name AS franchisee_last_name,
+    l.location_id,
+    cl.customer_id,
+    cl.first_name,
+    cl.last_name,
+    cl.e_mail,
+    cl.phone_number,
+    cl.children_count,
+    cl.gender,
+    cl.marital_status,
+    od.menu_item_id,
+    m.menu_item_name,
+    od.quantity,
+    od.unit_price,
+    od.price,
+    oh.order_amount,
+    oh.order_tax_amount,
+    oh.order_discount_amount,
+    oh.order_total
+FROM tasty_bytes_dbt_db.dev.raw_pos_order_detail od
+JOIN tasty_bytes_dbt_db.dev.raw_pos_order_header oh
+    ON od.order_id = oh.order_id
+JOIN tasty_bytes_dbt_db.dev.raw_pos_truck t
+    ON oh.truck_id = t.truck_id
+JOIN tasty_bytes_dbt_db.dev.raw_pos_menu m
+    ON od.menu_item_id = m.menu_item_id
+JOIN tasty_bytes_dbt_db.dev.raw_pos_franchise f
+    ON t.franchise_id = f.franchise_id
+JOIN tasty_bytes_dbt_db.dev.raw_pos_location l
+    ON oh.location_id = l.location_id
+LEFT JOIN tasty_bytes_dbt_db.dev.raw_customer_customer_loyalty cl
+    ON oh.customer_id = cl.customer_id
+        );
+[0m04:01:52.513316 [debug] [Thread-2 (]: Opening a new connection, currently in state init
+[0m04:09:53.511868 [debug] [Thread-2 (]: SQL status: SUCCESS 1 in 480.998 seconds
+[0m04:09:53.517610 [info ] [Thread-2 (]: 10 of 11 OK created sql table model dev.orders ................................. [[32mSUCCESS 1[0m in 481.02s]
+[0m04:09:53.518648 [debug] [Thread-2 (]: Finished running node model.tasty_bytes.orders
+[0m04:09:53.519401 [debug] [Thread-2 (]: Began running node model.tasty_bytes.sales_metrics_by_location
+[0m04:09:53.520256 [info ] [Thread-2 (]: 11 of 11 START python table model dev.sales_metrics_by_location ................ [RUN]
+[0m04:09:53.521340 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly model.tasty_bytes.orders, now model.tasty_bytes.sales_metrics_by_location)
+[0m04:09:53.521936 [debug] [Thread-2 (]: Began compiling node model.tasty_bytes.sales_metrics_by_location
+[0m04:09:53.554370 [debug] [Thread-2 (]: Writing injected SQL for node "model.tasty_bytes.sales_metrics_by_location"
+[0m04:09:53.555312 [debug] [Thread-2 (]: Began executing node model.tasty_bytes.sales_metrics_by_location
+[0m04:09:53.566388 [debug] [Thread-2 (]: Writing runtime python for node "model.tasty_bytes.sales_metrics_by_location"
+[0m04:09:53.569871 [debug] [Thread-2 (]: Using snowflake connection "model.tasty_bytes.sales_metrics_by_location"
+[0m04:09:53.571236 [debug] [Thread-2 (]: On model.tasty_bytes.sales_metrics_by_location: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "tasty_bytes", "target_name": "dev", "node_id": "model.tasty_bytes.sales_metrics_by_location"} */
+WITH sales_metrics_by_location__dbt_sp AS PROCEDURE ()
+
+RETURNS STRING
+LANGUAGE PYTHON
+RUNTIME_VERSION = '3.9'
+PACKAGES = ('snowflake-snowpark-python')
+
+
+
+HANDLER = 'main'
+EXECUTE AS CALLER
+AS
+$$
+
+
+
+  
+    
+    
+from snowflake.snowpark.functions import col, lit, concat, count, sum as sum_, coalesce
+
+def model(dbt, session):
+    """
+    This model demonstrates basic Snowpark transformations using dbt Python models.
+    It joins location data with trucks and aggregates metrics by location.
+    Uses raw_pos models as sources instead of tb_101 directly.
+    """
+    # Get tables using dbt's ref function to reference the raw_pos models
+    locations_df = dbt.ref('raw_pos_location')
+    trucks_df = dbt.ref('raw_pos_truck')
+    orders_df = dbt.ref('raw_pos_order_header')
+    
+    # Join locations with trucks to get truck counts by location
+    location_trucks = (
+        trucks_df
+        .join(
+            locations_df, 
+            trucks_df["PRIMARY_CITY"] == locations_df["CITY"], 
+            "inner"
+        )
+        # Use simple column names and case-insensitive approach
+        .select(
+            locations_df["LOCATION_ID"],
+            locations_df["LOCATION"],
+            locations_df["CITY"],
+            trucks_df["TRUCK_ID"]
+        )
+        .groupBy("LOCATION_ID", "LOCATION", "CITY")
+        .agg(count("TRUCK_ID").alias("TRUCK_COUNT"))
+    )
+    
+    # Join with order data to get sales metrics
+    location_metrics = (
+        orders_df
+        .join(locations_df, "LOCATION_ID", "inner")
+        .groupBy("LOCATION_ID")
+        .agg(
+            sum_("ORDER_TOTAL").alias("TOTAL_SALES"),
+            sum_("ORDER_AMOUNT").alias("TOTAL_AMOUNT"),
+            sum_("ORDER_TAX_AMOUNT").alias("TOTAL_TAX")
+        )
+    )
+    
+    # Create a more simplified final version
+    joined_df = location_trucks.join(location_metrics, "LOCATION_ID", "left")
+    
+    # Add the calculated columns after join to avoid column reference issues
+    final_df = (
+        joined_df
+        .select(
+            col("LOCATION_ID"),
+            col("LOCATION"),
+            col("CITY"),
+            col("TRUCK_COUNT"),
+            # Use coalesce instead of fillna for Column objects
+            coalesce(col("TOTAL_SALES"), lit(0)).alias("TOTAL_SALES"),
+            coalesce(col("TOTAL_AMOUNT"), lit(0)).alias("TOTAL_AMOUNT"),
+            coalesce(col("TOTAL_TAX"), lit(0)).alias("TOTAL_TAX")
+        )
+    )
+    
+    # Add the full location description as a separate step
+    final_with_desc = (
+        final_df
+        .withColumn(
+            "LOCATION_DESCRIPTION", 
+            concat(
+                col("CITY"), 
+                lit(" (Trucks: "), 
+                col("TRUCK_COUNT").cast("string"), 
+                lit(")")
+            )
+        )
+    )
+    
+    # Return the final dataframe
+    return final_with_desc
+
+
+# This part is user provided model code
+# you will need to copy the next section to run the code
+# COMMAND ----------
+# this part is dbt logic for get ref work, do not modify
+
+def ref(*args, **kwargs):
+    refs = {"raw_pos_location": "tasty_bytes_dbt_db.dev.raw_pos_location", "raw_pos_order_header": "tasty_bytes_dbt_db.dev.raw_pos_order_header", "raw_pos_truck": "tasty_bytes_dbt_db.dev.raw_pos_truck"}
+    key = '.'.join(args)
+    version = kwargs.get("v") or kwargs.get("version")
+    if version:
+        key += f".v{version}"
+    dbt_load_df_function = kwargs.get("dbt_load_df_function")
+    return dbt_load_df_function(refs[key])
+
+
+def source(*args, dbt_load_df_function):
+    sources = {}
+    key = '.'.join(args)
+    return dbt_load_df_function(sources[key])
+
+
+config_dict = {}
+
+
+class config:
+    def __init__(self, *args, **kwargs):
+        pass
+
+    @staticmethod
+    def get(key, default=None):
+        return config_dict.get(key, default)
+
+class this:
+    """dbt.this() or dbt.this.identifier"""
+    database = "tasty_bytes_dbt_db"
+    schema = "dev"
+    identifier = "sales_metrics_by_location"
+    
+    def __repr__(self):
+        return 'tasty_bytes_dbt_db.dev.sales_metrics_by_location'
+
+
+class dbtObj:
+    def __init__(self, load_df_function) -> None:
+        self.source = lambda *args: source(*args, dbt_load_df_function=load_df_function)
+        self.ref = lambda *args, **kwargs: ref(*args, **kwargs, dbt_load_df_function=load_df_function)
+        self.config = config
+        self.this = this()
+        self.is_incremental = False
+
+# COMMAND ----------
+
+
+
+def materialize(session, df, target_relation):
+    # make sure pandas exists
+    import importlib.util
+    package_name = 'pandas'
+    if importlib.util.find_spec(package_name):
+        import pandas
+        if isinstance(df, pandas.core.frame.DataFrame):
+          session.use_database(target_relation.database)
+          session.use_schema(target_relation.schema)
+          # session.write_pandas does not have overwrite function
+          df = session.createDataFrame(df)
+    
+    df.write.mode("overwrite").save_as_table('tasty_bytes_dbt_db.dev.sales_metrics_by_location', table_type='transient')
+
+def main(session):
+    dbt = dbtObj(session.table)
+    df = model(dbt, session)
+    materialize(session, df, dbt.this)
+    return "OK"
+
+  
+$$
+CALL sales_metrics_by_location__dbt_sp();
+[0m04:09:53.572227 [debug] [Thread-2 (]: Opening a new connection, currently in state init
+[0m04:10:01.116290 [debug] [Thread-2 (]: SQL status: SUCCESS 1 in 7.544 seconds
+[0m04:10:01.120582 [info ] [Thread-2 (]: 11 of 11 OK created python table model dev.sales_metrics_by_location ........... [[32mSUCCESS 1[0m in 7.60s]
+[0m04:10:01.121555 [debug] [Thread-2 (]: Finished running node model.tasty_bytes.sales_metrics_by_location
+[0m04:10:01.124371 [debug] [Dummy-1   ]: Connection 'master' was properly closed.
+[0m04:10:01.124894 [debug] [Dummy-1   ]: Connection 'list_tasty_bytes_dbt_db' was properly closed.
+[0m04:10:01.125329 [debug] [Dummy-1   ]: Connection 'model.tasty_bytes.sales_metrics_by_location' was properly closed.
+[0m04:10:01.125967 [info ] [Dummy-1   ]: 
+[0m04:10:01.126524 [info ] [Dummy-1   ]: Finished running 3 table models, 8 view models in 0 hours 8 minutes and 29.91 seconds (509.91s).
+[0m04:10:01.129233 [debug] [Dummy-1   ]: Command end result
+[0m04:10:01.179236 [debug] [Dummy-1   ]: Wrote artifact WritableManifest to /tmp/dbt/target/manifest.json
+[0m04:10:01.182529 [debug] [Dummy-1   ]: Wrote artifact SemanticManifest to /tmp/dbt/target/semantic_manifest.json
+[0m04:10:01.191174 [debug] [Dummy-1   ]: Wrote artifact RunExecutionResult to /tmp/dbt/target/run_results.json
+[0m04:10:01.191738 [info ] [Dummy-1   ]: 
+[0m04:10:01.192390 [info ] [Dummy-1   ]: [32mCompleted successfully[0m
+[0m04:10:01.192889 [info ] [Dummy-1   ]: 
+[0m04:10:01.193615 [info ] [Dummy-1   ]: Done. PASS=11 WARN=0 ERROR=0 SKIP=0 TOTAL=11
+[0m04:10:01.202324 [debug] [Dummy-1   ]: Resource report: {"command_name": "run", "command_success": true, "command_wall_clock_time": 511.85297, "process_in_blocks": "0", "process_kernel_time": 1.25, "process_mem_max_rss": "438900", "process_out_blocks": "0", "process_user_time": 11.82}
+[0m04:10:01.203087 [debug] [Dummy-1   ]: Command `cli run` succeeded at 04:10:01.202807 after 511.85 seconds
+[0m04:10:01.203653 [debug] [Dummy-1   ]: Flushing usage events
